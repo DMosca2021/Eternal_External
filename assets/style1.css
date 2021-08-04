@@ -1,0 +1,17 @@
+body {
+    background-color: #ffcdd2;
+    max-width: 100%;
+    margin: auto;
+}
+h1 {
+    background-color: #ef9a9a; 
+    padding: 10px; 
+    font-family: 'Times New Roman', Times, serif;
+}
+.nav-content{
+    background-color: #ff5252;
+}
+.container {
+    padding: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
