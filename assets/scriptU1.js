@@ -3,7 +3,6 @@ const user1Input = document.querySelector("#userinput1");
 const numberBg = document.getElementById("#main")
 
 
-numberBg.createAttribute("img",)
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();
