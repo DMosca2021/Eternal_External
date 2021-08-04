@@ -1,23 +1,5 @@
 // pseudo-code and experiments 
 
-console.log("RapidAPI response")
-fetch("https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/?text=After%20living%20abroad%20for%20such%20a%20long%20time%2C%20seeing%20my%20family%20was%20the%20best%20present%20I%20could%20have%20ever%20wished%20for.", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "fdc0490feemsh389b14fa8c6f367p1ee3e8jsn45913dafe114",
-		"x-rapidapi-host": "twinword-emotion-analysis-v1.p.rapidapi.com"
-	}
-})
-.then(function(response) {
-	return response.json();
-})
-.then(function(data) {
-    console.log(data);
-})
-.catch(err => {
-	console.error(err);
-});
-
 console.log("-----------")
 console.log("Advice slip API")
 
@@ -40,6 +22,54 @@ fetch("https://api.adviceslip.com/advice/search/advice")
         // at the end of quiz display all chosen answers and give option to restart quiz to change answers.
         // display message alerting user that their loved ones will now have access to their advice.
     
+let questionDisplay = document.querySelector(".question-display")
+let advice1 = document.querySelector("#choice1")
+let advice2 = document.querySelector("#choice2")
+let advice3 = document.querySelector("#choice3")
+let advice4 = document.querySelector("#choice4")
+
 function renderQuiz() {
+    fetch("https://api.adviceslip.com/advice/search/fail")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        console.log(data);
+        console.log(data.slips[1].advice);
+        advice1.innerHTML = data.slips[1].advice
+
+
+        // for (let index = 0; index < adviceChoices.length; index++) {
+        //     console.log(data.slips.id);
+        //     adviceChoices[index].innerHTML = JSON.stringify(data.slips[1])
+        // }
+    })
+
+    fetch("https://api.adviceslip.com/advice/search/wonder")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        console.log(data);
+        console.log(data.slips[2].advice);
+        advice2.innerHTML = data.slips[2].advice
+
+    })
+
+    fetch("https://api.adviceslip.com/advice/search/wonder")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        console.log(data);
+        console.log(data.slips[0].advice);
+        advice3.innerHTML = data.slips[0].advice
+
+    })
+
+
     
+
 }
+
+renderQuiz();
