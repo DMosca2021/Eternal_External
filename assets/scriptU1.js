@@ -1,7 +1,7 @@
 
 const user1Input = document.querySelector("#userinput1");
 const numberBg = document.getElementById("#main")
-const feelingInputForm = document.getElementById("feelingInput");
+let feelingInputForm = document.getElementById("feelingInput");
 const feelingBtn = document.querySelector("#feelingBtn")
 
 
@@ -28,7 +28,9 @@ console.log(feelingInputForm.value)
 	if (feelingInputForm !== null) {
 		feelingInput = feelingInputForm.value 
 	}
-var feelingAPI = "https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/?text=" + feelingInput
+let newFeelingInput = feelingInput.replaceAll(" ", "%20");
+console.log(newFeelingInput);
+var feelingAPI = "https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/?text=" + newFeelingInput
 console.log(feelingAPI)
 fetch(feelingAPI, {
 
@@ -63,8 +65,22 @@ form.addEventListener('submit', function(event) {
     event.preventDefault();
     getFeeling()
     
+	var emotionResponse = ""
+	var feelingFeedback = document.createElement("button")
+
+	feelingFeedback.textContent = emotionResponse
+
     }
 );
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+;
+  });
+
+ 
 
 //write a function to pull emotion 
 //make a chart of emotional scores??? 
