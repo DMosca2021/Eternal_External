@@ -64,6 +64,7 @@ form.addEventListener('submit', function(event) {
     
 	var emotionResponse = ""
 	var feelingFeedback = document.createElement("button")
+	
 
 	feelingFeedback.textContent = emotionResponse
 
@@ -71,11 +72,13 @@ form.addEventListener('submit', function(event) {
 );
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
-;
-  });
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     var elems = document.querySelectorAll('select');
+//     var instances = M.FormSelect.init(elems, options);
+// ;
+//   });
 
  
 
