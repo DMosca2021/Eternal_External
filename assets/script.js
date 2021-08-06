@@ -59,10 +59,9 @@ let startBtn = document.querySelector(".start-quiz");
 let choiceHist = JSON.parse(localStorage.getItem("choice")) || [];
 
 questionDisplay.setAttribute("style", "visibility: hidden");
-// questionDisplay2.setAttribute("style", "visibility: hidden");
-// questionDisplay3.setAttribute("style", "visibility: hidden");
-// questionDisplay4.setAttribute("style", "visibility: hidden");
-// questionDisplay5.setAttribute("style", "visibility: hidden");
+
+
+// console.log(checkBox.checked)
 
 
 function startQuiz() {
@@ -93,21 +92,21 @@ function renderQuiz() {
                 shownQuestion.innerHTML = currentQuestion
             }
 
-            advice1.innerHTML = quitAdviceArray[0]
-            advice2.innerHTML = quitAdviceArray[1]
-            advice3.innerHTML = quitAdviceArray[2]
-            advice4.innerHTML = quitAdviceArray[3]
+            // advice1.innerHTML = quitAdviceArray[0]
+            // advice2.innerHTML = quitAdviceArray[1]
+            // advice3.innerHTML = quitAdviceArray[2]
+            // advice4.innerHTML = quitAdviceArray[3]
         })
 
-        function checkAnswer () {
-            if (checkBox.checked === true) {
-                event.preventDefaul
-                // choiceHist.push()
-                // localStorage.setItem
-                console.log(checkBox.value)
-            }
-        }
-        checkAnswer();
+        // function checkAnswer () {
+        //     if (checkBox.checked === true) {
+        //         event.preventDefaul
+        //         // choiceHist.push()
+        //         // localStorage.setItem
+        //         console.log(checkBox.value)
+        //     }
+        // }
+        // checkAnswer();
     }
     renderQuestion();
     
