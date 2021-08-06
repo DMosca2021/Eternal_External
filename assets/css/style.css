@@ -15,6 +15,13 @@ h1 {
     
 }
 
+/* .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+} */
+
 h4 {
     font-family: 'Montserrat', sans-serif;
 }

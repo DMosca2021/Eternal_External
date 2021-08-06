@@ -1,8 +1,9 @@
 
 const user1Input = document.querySelector("#userinput1");
 const numberBg = document.getElementById("#main")
-let feelingInputForm = document.getElementById("feelingInput");
+const feelingInputForm = document.getElementById("feelingInput");
 const feelingBtn = document.querySelector("#feelingBtn")
+var emotionsDetected = ""
 
 
 
@@ -29,7 +30,7 @@ let newFeelingInput = feelingInput.replaceAll(" ", "%20");
 console.log(newFeelingInput);
 var feelingAPI = "https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/?text=" + newFeelingInput
 console.log(feelingAPI)
-fetch(feelingAPI, {
+return fetch(feelingAPI, {
 
 	"method": "GET",
 	"headers": {
@@ -56,24 +57,54 @@ return data
 });
 
 }
+function getPopUp() {
+		let popUpBox = document.getElementById('popUpBox');
+		popUpBox.style.display = "block";
+		
 
-
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    getFeeling()
-    
-	var emotionResponse = ""
-	var feelingFeedback = document.createElement("button")
+		}
 	
 
-	feelingFeedback.textContent = emotionResponse
 
-    }
-);
+function feelingFeedback(emotionalData) {
+	 var feelingBtnDiv = document.querySelector(".emotional-response-btn")
+		let feelingBtnEl = document.createElement("button")
+		
+		emotionalData.emotions_detected.forEach(element => {
+			console.log(element);
+			console.log(emotionalData.emotions_detected)
+
+			feelingBtnEl.textContent = element
+			
+		});  
+
+		feelingBtnDiv.append(feelingBtnEl)
+		feelingBtnEl.addEventListener("click", getPopUp) 
+	
+		}
+
+form.addEventListener('submit', function(event) {
+	event.preventDefault();
+	
+	getFeeling() 
+	.then(function(data) {
+		console.log(data)
+		feelingFeedback(data)
+		
+	
+	
+} )} )
 
 
 
 
+//onbutton click a response shows up with a "Oh I see you are feeling + emotions detected + "thats so good to hear!"
+//if emotions detected = sad then respond "That's too bad you are sad"
+
+
+
+//how to apply data to btn
+//pull it out of the object 
 // document.addEventListener('DOMContentLoaded', function() {
 //     var elems = document.querySelectorAll('select');
 //     var instances = M.FormSelect.init(elems, options);
