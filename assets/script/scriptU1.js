@@ -29,7 +29,6 @@ console.log(feelingInputForm.value)
 let newFeelingInput = feelingInput.replaceAll(" ", "%20");
 console.log(newFeelingInput);
 var feelingAPI = "https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/?text=" + newFeelingInput
-console.log(feelingAPI)
 return fetch(feelingAPI, {
 
 	"method": "GET",
@@ -85,8 +84,8 @@ function feelingFeedback(emotionalData) {
 
 				
 				localStorage.setItem("emotion-scores",JSON.stringify(emotionalData.emotion_scores));
-				localStorage.setItem("emotion-detect",JSON.stringify(emotionalData.emotions_detected));
-				console.log(emotionalData)
+				var emotionalDataReturn = localStorage.setItem("emotion-detect",JSON.stringify(emotionalData.emotions_detected));
+				console.log(emotionalDataReturn)
 				location.href = "graph.html"
 				
 
