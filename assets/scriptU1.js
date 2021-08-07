@@ -57,31 +57,58 @@ return data
 });
 
 }
-function getPopUp() {
-		let popUpBox = document.getElementById('popUpBox');
-		popUpBox.style.display = "block";
+//  function getPopUp() {
+// 		var popUpBox = document.getElementById('feeling-modal');
+// 		console.log(popUpBox);
+// 		console.log('feeling-modal');
+// 		popUpBox.setAttribute("style", "visibility: visible;");
+// 		console.log(getPopUp);
 		
-
-		}
+//  		}
 	
 
 
 function feelingFeedback(emotionalData) {
-	 var feelingBtnDiv = document.querySelector(".emotional-response-btn")
-		let feelingBtnEl = document.createElement("button")
+		
+
 		
 		emotionalData.emotions_detected.forEach(element => {
+			var feelingBtnDiv = document.getElementById("emotional-response-btn");
+			let feelingBtnEl = document.createElement("button");
 			console.log(element);
 			console.log(emotionalData.emotions_detected)
 
 			feelingBtnEl.textContent = element
 			
-		});  
+			feelingBtnDiv.append(feelingBtnEl)
+			feelingBtnEl.addEventListener("click", function name() {
 
-		feelingBtnDiv.append(feelingBtnEl)
-		feelingBtnEl.addEventListener("click", getPopUp) 
+				
+				localStorage.setItem("emotion-scores",JSON.stringify(emotionalData.emotion_scores));
+				localStorage.setItem("emotion-detect",JSON.stringify(emotionalData.emotions_detected));
+				console.log(emotionalData)
+				location.href = "graph.html"
+				
+
+
+				
+				
+			}) 
+			//open page to chart 
+		
+			
+		});  
 	
 		}
+
+function emotionScores(data) {
+
+	data.emotion_scores.forEach(element => {
+		localStorage.setItem("name",JSON.stringify(element));	
+	});
+
+	
+}
 
 form.addEventListener('submit', function(event) {
 	event.preventDefault();
@@ -91,9 +118,17 @@ form.addEventListener('submit', function(event) {
 		console.log(data)
 		feelingFeedback(data)
 		
+
+
 	
 	
 } )} )
+
+
+
+
+
+
 
 
 
@@ -114,4 +149,4 @@ form.addEventListener('submit', function(event) {
  
 
 //write a function to pull emotion 
-//make a chart of emotional scores??? 
+
