@@ -42,11 +42,9 @@ const myChart = new Chart(ctx, {
         xlabels: xlabels,
         datasets: [{
             label: 'Emotional Trends',
-<<<<<<< HEAD
-            data: [(localStorage.getItem.emotionArray)],
-=======
+
             data: Object.values(getEmotionNumbers),
->>>>>>> 9e5c64bc1350bdc935304b968228ac180eb5b545
+
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -75,12 +73,7 @@ const myChart = new Chart(ctx, {
     }
 });
 
-// getData();
-localStorage.JSON
-localStorage.getItem.emotionArray
-    console.log(localStorage)
-Storage.setItem (emotionArray, 50)
-
+//getData();
 
 
 
