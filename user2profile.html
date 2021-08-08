@@ -30,30 +30,29 @@
     <button>submit</button>
 
     <button class="start-quiz">start quiz</button>
-    <section>
-      <form action="#" class="question-display">
+    
+
+
+      <form class="question-display">
           <h5 class="question"></h5>
-          <div class="choice-display">
-          <label for="choice1">
-            <input type="checkbox" name="choice" value="yes" id="choice-check"/>
-            <span id="choice1">ADVICE</span>
-          </label>
-          <label>
-            <input type="checkbox" id="choice-check" name="choice2" value="false"/>
-            <span id="choice2">ADVICE</span>
-          </label>
-          <label>
-            <input type="checkbox" id="choice-check" name="choice3" value="false"/>
-            <span id="choice3">ADVICE</span>
-          </label>
-          <label>
-            <input type="checkbox" id="choice-check" name="choice4" value="false"/>
-            <span id="choice4">ADVICE</span>
-          </label>
-          </div>
-        </p>
+          <p class="question">
+            <label for="choice1">
+              <input type="checkbox" class="filled-in"  id="choice1" value="false" onclick="isChecked()"/><span class="choice-text"></span><br/>
+            </label>
+            <label for="choice2">
+              <input type="checkbox" class="filled-in"  id="choice2" value="false" onclick="isChecked()"/><span class="choice-text"></span><br/>
+            </label>
+            <label for="choice3">
+              <input type="checkbox" class="filled-in"  id="choice3" value="false" onclick="isChecked()"/><span class="choice-text"></span><br/>
+            </label>
+            <label for="choice4">
+              <input type="checkbox" class="filled-in"  id="choice4" value="false" onclick="isChecked()"/><span class="choice-text"></span><br/>
+            </label>
+            <input type="submit" value="save-choice" id="submit"/>
+          </p>
       </form>
-    </section>
+
+    
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
