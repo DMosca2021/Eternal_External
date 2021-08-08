@@ -55,7 +55,7 @@ let shownQuestion = document.querySelector(".question");
 let advice = document.querySelector(".choice-text");
 let startBtn = document.querySelector(".start-quiz");
 let submitBtn = document.querySelector("#submit");
-
+let questionIndex = 0
 let choiceHist = JSON.parse(localStorage.getItem("userChoice")) || [];
 
 questionDisplay.setAttribute("style", "visibility: hidden");
@@ -92,7 +92,7 @@ function renderQuiz() {
             ]
 
             let availableQuestions = [...questionsArray]
-            let questionIndex = 0
+            
             console.log(questionIndex)
 
             console.log(availableQuestions)
@@ -110,12 +110,7 @@ function renderQuiz() {
             }
             renderQuestions();
 
-            submitBtn.addEventListener("click", function(event){
-                event.preventDefault();
-                questionIndex++
-                console.log(questionIndex);
-                renderQuestions();
-            })
+
         });
         
     };
@@ -137,23 +132,47 @@ function isChecked() {
          checkBox3.disabled = true;
          checkBox4.disabled = true;
          localStorage.setItem("choice", choiceHist)
-     } else {
-        checkBox1.disabled = false;
-        checkBox2.disabled = false;
-        checkBox3.disabled = false;
-        checkBox4.disabled = false;
-     }
+     } 
      if (checkBox2.checked == true) {
         checkBox1.disabled = true;
         checkBox3.disabled = true;
         checkBox4.disabled = true;
         localStorage.setItem("choice", choiceHist)
     }
+    if (checkBox3.checked == true) {
+        checkBox1.disabled = true;
+        checkBox2.disabled = true;
+        checkBox4.disabled = true;
+        localStorage.setItem("choice", choiceHist)
+    }
+    if (checkBox4.checked == true) {
+        checkBox1.disabled = true;
+        checkBox2.disabled = true;
+        checkBox3.disabled = true;
+        localStorage.setItem("choice", choiceHist)
+    }
+    else {
+        checkBox1.disabled = false;
+        checkBox2.disabled = false;
+        checkBox3.disabled = false;
+        checkBox4.disabled = false;
+    }
          
 
-}
+};
         
+submitBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    questionIndex++
+    if (questionIndex >= 5){
+        alert("Quiz complete!")
+        submitBtn.disabled = true
+    }
+    console.log(questionIndex);
+    isChecked();
+    renderQuestions();
+})
 
 startBtn.addEventListener("click", function(){
     startQuiz();
-})
+});
