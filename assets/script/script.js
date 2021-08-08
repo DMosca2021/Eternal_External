@@ -52,7 +52,16 @@
 
 let questionDisplay = document.querySelector(".question-display");
 let shownQuestion = document.querySelector(".question");
-let advice = document.querySelector(".choice-text");
+let advice1 = document.querySelector("#choice-text1");
+let advice2 = document.querySelector("#choice-text2");
+let advice3 = document.querySelector("#choice-text3");
+let advice4 = document.querySelector("#choice-text4");
+
+let checkBox1 = document.querySelector("#choice1");
+let checkBox2 = document.querySelector("#choice2");
+let checkBox3 = document.querySelector("#choice3");
+let checkBox4 = document.querySelector("#choice4");
+
 let startBtn = document.querySelector(".start-quiz");
 let submitBtn = document.querySelector("#submit");
 let questionIndex = 0
@@ -102,26 +111,30 @@ function renderQuiz() {
                 console.log(currentQuestion.question);
                 shownQuestion.innerHTML = currentQuestion.question;
 
-                for (let i = 0; i < currentQuestion.choices.length; i++) {
-                    let answerIndex = currentQuestion.choices[i];
+                currentQuestion.choices.forEach(element => {
+                    let answerIndex = currentQuestion.choices;
+                    console.log(answerIndex);
                     console.log(answerIndex[0]);
-                    advice.innerHTML = answerIndex
-                };
+                    console.log(answerIndex[1]);
+                    console.log(answerIndex[2]);
+                    console.log(answerIndex[3]);
+
+
+                    advice1.textContent = answerIndex[0]
+                    advice2.innerHTML = answerIndex[1]
+                    advice3.innerHTML = answerIndex[2]
+                    advice4.innerHTML = answerIndex[3]
+
+                });
             }
             renderQuestions();
 
             submitBtn.addEventListener("click", function(event){
                 event.preventDefault();
-                questionIndex++
-                if (questionIndex >= 5){
-                    alert("Quiz complete!")
-                    submitBtn.disabled = true
-                }
-                console.log(questionIndex);
                 isChecked();
+                nextQuestion();
                 renderQuestions();
             })
-            //Left off with moving functions around to get answers to display correctly. Had questions switching with each save button click, answers were also switching but not displaying correctly in each checkbox. 
 
         });
         
@@ -129,12 +142,27 @@ function renderQuiz() {
     obtainData();
 };
 
-function isChecked() {
+function nextQuestion() {
+    if (checkBox1.checked == true || checkBox2.checked == true || checkBox3.checked == true || checkBox4.checked == true) {
+        questionIndex++
+        if (questionIndex >= 5){
+            alert("Quiz complete!")
+            submitBtn.disabled = true
+        }
+        console.log(questionIndex);
+        checkBox1.checked = false
+        checkBox2.checked = false
+        checkBox3.checked = false
+        checkBox4.checked = false
+        checkBox1.disabled = false
+        checkBox2.disabled = false
+        checkBox3.disabled = false
+        checkBox4.disabled = false
+    }
     
-    let checkBox1 = document.querySelector("#choice1");
-    let checkBox2 = document.querySelector("#choice2");
-    let checkBox3 = document.querySelector("#choice3");
-    let checkBox4 = document.querySelector("#choice4");
+};
+
+function isChecked() {
     console.log(checkBox1.checked);
      if (checkBox1.checked == false && checkBox2.checked == false && checkBox3.checked == false && checkBox4.checked == false) {
         alert("Choose an advice slip")
@@ -169,9 +197,6 @@ function isChecked() {
         checkBox3.disabled = true;
         localStorage.setItem("choice", choiceHist)
     }
-
-         
-
 };
         
 // submitBtn.addEventListener("click", function(event){
