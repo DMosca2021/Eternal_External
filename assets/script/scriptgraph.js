@@ -39,10 +39,12 @@ const xlabels = [];
 const myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: xlabels,
+        xlabels: xlabels,
         datasets: [{
             label: 'Emotional Trends',
+
             data: Object.values(getEmotionNumbers),
+
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
