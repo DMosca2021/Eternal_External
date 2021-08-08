@@ -120,7 +120,7 @@ function renderQuiz() {
                     console.log(answerIndex[3]);
 
 
-                    advice1.textContent = answerIndex[0]
+                    advice1.innerHTML = answerIndex[0]
                     advice2.innerHTML = answerIndex[1]
                     advice3.innerHTML = answerIndex[2]
                     advice4.innerHTML = answerIndex[3]
@@ -164,6 +164,10 @@ function nextQuestion() {
 
 function isChecked() {
     console.log(checkBox1.checked);
+    console.log(checkBox2.checked);
+    console.log(checkBox3.checked);
+    console.log(checkBox4.checked);
+    console.log("<--------->")
      if (checkBox1.checked == false && checkBox2.checked == false && checkBox3.checked == false && checkBox4.checked == false) {
         alert("Choose an advice slip")
      } 
@@ -171,7 +175,10 @@ function isChecked() {
          checkBox2.disabled = true;
          checkBox3.disabled = true;
          checkBox4.disabled = true;
-         localStorage.setItem("choice", choiceHist)
+         let userChoice = advice1.innerHTML
+         console.log(userChoice)
+         choiceHist.push(userChoice)
+         localStorage.setItem("userChoice", JSON.stringify(choiceHist))
      }
      else {
         checkBox1.disabled = false;
@@ -183,19 +190,25 @@ function isChecked() {
         checkBox1.disabled = true;
         checkBox3.disabled = true;
         checkBox4.disabled = true;
-        localStorage.setItem("choice", choiceHist)
+        let userChoice = advice2.innerHTML
+        choiceHist.push(userChoice)
+        localStorage.setItem("userChoice", JSON.stringify(choiceHist))
     }
     if (checkBox3.checked == true) {
         checkBox1.disabled = true;
         checkBox2.disabled = true;
         checkBox4.disabled = true;
-        localStorage.setItem("choice", choiceHist)
+        let userChoice = advice3.innerHTML
+        choiceHist.push(userChoice)
+        localStorage.setItem("userChoice", JSON.stringify(choiceHist))
     }
     if (checkBox4.checked == true) {
         checkBox1.disabled = true;
         checkBox2.disabled = true;
         checkBox3.disabled = true;
-        localStorage.setItem("choice", choiceHist)
+        let userChoice = advice4.innerHTML
+        choiceHist.push(userChoice)
+        localStorage.setItem("userChoice", JSON.stringify(choiceHist))
     }
 };
         
