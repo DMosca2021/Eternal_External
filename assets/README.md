@@ -55,3 +55,7 @@ Show your TA all of the API requests you need working in Postman/Insomnia or wit
 JavaScript implementation should be pseudo-coded and actual coding started
 Presentation started (skeleton -- 10% complete)
 This will also give you an opportunity to review the requirements for the project :slightly_smiling_face:
+
+
+//keeping 
+//
