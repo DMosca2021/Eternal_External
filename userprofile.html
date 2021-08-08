@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Quiz</title>
@@ -24,7 +28,7 @@
 
 <div class="container">
 <div id="main">
-    <img src="./images/wavehand2.png" alt="EE logo">
+  <img src="./images/wavehand2.png" alt="EE logo">
     <h1>User 1 The Living</h1>
         <div class="input-name">
             <form id="form">
@@ -35,7 +39,19 @@
           </div>
   
 </div>
-<section>
+
+<a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+
+<!-- Dropdown Structure -->
+<ul id='dropdown1' class='dropdown-content'>
+  <li><a href="#!">one</a></li>
+  <li><a href="#!">two</a></li>
+  <li class="divider" tabindex="-1"></li>
+  <li><a href="#!">three</a></li>
+  <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+  <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+</ul>
+<!-- <section class = drop-down>
 <div class="input-field col s12">
   <select>
     <option value="" disabled selected>What advice do you need? </option>
@@ -45,11 +61,11 @@
     <option value="3">I really need a confidence boost today!</option>
     <option value="3">If you were still here what would you say?</option>
   </select>
-  <label>choose your advice</label>
+  <label></label>
 </div>
-</section>
-<section>
-        <h5>Tell me something that happened and how are you feeling about it?</h5>
+</section> -->
+  <section>
+        <h5>Tell me something that happened today and how are you feeling about it?</h5>
         <form action="#">
             <p>
               <label>
@@ -58,10 +74,16 @@
 
               <button id="feelingBtn" type="submit">Submit</button>
             </p>
-            <p>
+        
+            <div id="emotional-response-btn"></div>
 
-</section>
-        <script src="./assets/scriptU1.js"></script>
+            <div id ="feeling-modal" class="modal">
+                <h1>I am the modal</h1>
+              </div>
+            </div>
+          
+
+        <script src="./assets/script/scriptU1.js"></script>
         
 </body>
 
