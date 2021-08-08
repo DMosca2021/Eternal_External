@@ -29,12 +29,12 @@ emotionSpan.textContent = getEmotion
 const ctx = document.getElementById('myChart').getContext('2d');
 const xlabels = [];
 const myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
-        labels: xlabels,
+        xlabels: xlabels,
         datasets: [{
             label: 'Emotional Trends',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [(localStorage.getItem.emotionArray)],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -64,6 +64,11 @@ const myChart = new Chart(ctx, {
 });
 
 // getData();
+localStorage.JSON
+localStorage.getItem.emotionArray
+    console.log(localStorage)
+Storage.setItem (emotionArray, 50)
+
 
 
 
