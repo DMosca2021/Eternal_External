@@ -55,3 +55,16 @@ Show your TA all of the API requests you need working in Postman/Insomnia or wit
 JavaScript implementation should be pseudo-coded and actual coding started
 Presentation started (skeleton -- 10% complete)
 This will also give you an opportunity to review the requirements for the project :slightly_smiling_face:
+
+<<<<<<< HEAD:README.md
+## Source links 
+- [Advice Slip API](https://api.adviceslip.com/#endpoint-search)
+- [Rapidapi Homepage](https://rapidapi.com/)
+- [Materialize CSS Framework](https://materializecss.com/)
+- [Twinword Sentiment Analyis API](https://www.twinword.com/)
+- [Interpreting Score of Sentiment Analysis](https://www.twinword.com/blog/interpreting-the-score-and-ratio-of-sentiment/)
+=======
+
+//keeping 
+//
+>>>>>>> 6683eca9b49fbdbd4b5f3ffa2493906b6af59ef1:assets/README.md

@@ -9,75 +9,11 @@
     <link rel="stylesheet" href="assets/style2.css">
 </head>
 
-<body>
+
+<header>"I see your feeling <span id ="emotion-span"></span>... """ <span id="emotion-span-text"></span></header>
 <canvas id="myChart" width="400" height="400"></canvas>
-<script>
-var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [emotions_detected],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
 
-//getData();
 
-//function getData() {
-    //const response = fetch(' .csv')
-    //const data = await response.text ();
-    //const table = data.split('/n').slice(1);
-    //table.forEach( row => {
-      //  const columns = row.split (',');
-        //const day = columns [0];
-        //xlabels.push()
-        //const mood = columns[1]
-        //console.log(day,temp)
-   // });
-
-//}
-</script>
-</section>
-<section>
-        <h5>Tell me something that happened and how are you feeling about it?</h5>
-        <form action="#">
-            <p>
-              <label>
-                <input type="text" id="feelingInput" value=""><br>
-              </label>
-
-              <button id="feelingBtn" type="submit">Submit</button>
-            </p>
-            <p>
-
-</section>
 
 <ul class="collapsible">
   <li>
@@ -98,4 +34,5 @@ var myChart = new Chart(ctx, {
 <script src="assets/graph.js"></script>
     
 </body>
+<script src = "assets/script/scriptgraph.js"></script>
 </html>
