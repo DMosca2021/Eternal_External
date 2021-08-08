@@ -36,6 +36,11 @@ h4 {
     font-family: 'Montserrat', sans-serif;
 }
 
+.dropdown-content{
+    width: max-content !important;
+    height:auto !important;
+ }
+
 .modal {
     position: fixed;
     left: 0;

@@ -126,9 +126,10 @@ form.addEventListener('submit', function(event) {
 
 
 
-
-
-
+$(document).ready(function(){
+	$('.modal').modal();
+	$('.dropdown-trigger').dropdown();
+ });
 
 
 
