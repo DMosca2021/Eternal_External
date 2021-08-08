@@ -5,7 +5,7 @@ var getEmotion = JSON.parse(localStorage.getItem("emotion-detect"))|| [];
 emotionSpan.textContent = getEmotion
 
 
-function user2response() {
+//function user2response() {
     emotionArray = ["joy","surprise","disgust","sadness","anger","fear"]
     emotionArray.forEach(element => {
         if (getEmotion === element[0]){
@@ -21,9 +21,9 @@ function user2response() {
     });
     
     
-}
+//}
 
-user2response()
+//user2response()
 
 //want to look at graph again! 
 const ctx = document.getElementById('myChart').getContext('2d');
