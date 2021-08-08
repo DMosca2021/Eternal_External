@@ -104,12 +104,23 @@ function renderQuiz() {
 
                 for (let i = 0; i < currentQuestion.choices.length; i++) {
                     let answerIndex = currentQuestion.choices[i];
-                    console.log(answerIndex);
+                    console.log(answerIndex[0]);
                     advice.innerHTML = answerIndex
                 };
             }
             renderQuestions();
 
+            submitBtn.addEventListener("click", function(event){
+                event.preventDefault();
+                questionIndex++
+                if (questionIndex >= 5){
+                    alert("Quiz complete!")
+                    submitBtn.disabled = true
+                }
+                console.log(questionIndex);
+                isChecked();
+                renderQuestions();
+            })
             //Left off with moving functions around to get answers to display correctly. Had questions switching with each save button click, answers were also switching but not displaying correctly in each checkbox. 
 
         });
@@ -133,7 +144,13 @@ function isChecked() {
          checkBox3.disabled = true;
          checkBox4.disabled = true;
          localStorage.setItem("choice", choiceHist)
-     } 
+     }
+     else {
+        checkBox1.disabled = false;
+        checkBox2.disabled = false;
+        checkBox3.disabled = false;
+        checkBox4.disabled = false;
+    }
      if (checkBox2.checked == true) {
         checkBox1.disabled = true;
         checkBox3.disabled = true;
@@ -152,27 +169,22 @@ function isChecked() {
         checkBox3.disabled = true;
         localStorage.setItem("choice", choiceHist)
     }
-    else {
-        checkBox1.disabled = false;
-        checkBox2.disabled = false;
-        checkBox3.disabled = false;
-        checkBox4.disabled = false;
-    }
+
          
 
 };
         
-submitBtn.addEventListener("click", function(event){
-    event.preventDefault();
-    questionIndex++
-    if (questionIndex >= 5){
-        alert("Quiz complete!")
-        submitBtn.disabled = true
-    }
-    console.log(questionIndex);
-    isChecked();
-    renderQuestions();
-})
+// submitBtn.addEventListener("click", function(event){
+//     event.preventDefault();
+//     questionIndex++
+//     if (questionIndex >= 5){
+//         alert("Quiz complete!")
+//         submitBtn.disabled = true
+//     }
+//     console.log(questionIndex);
+//     isChecked();
+//     // renderQuestions();
+// })
 
 startBtn.addEventListener("click", function(){
     startQuiz();
