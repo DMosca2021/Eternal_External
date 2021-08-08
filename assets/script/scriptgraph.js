@@ -1,13 +1,21 @@
 const emotionSpan = document.getElementById('emotion-span')
 const emotionText = document.getElementById('emotion-span-text')
-
+var getEmotionNumbers = JSON.parse(localStorage.getItem("emotion-scores"))|| [];
 var getEmotion = JSON.parse(localStorage.getItem("emotion-detect"))|| [];
 emotionSpan.textContent = getEmotion
+
+console.log(getEmotionNumbers);
+console.log(Object.values(getEmotionNumbers));
+
+var emotionValues = Object.values(getEmotionNumbers);
+
+document.createElement
 
 
 //function user2response() {
     emotionArray = ["joy","surprise","disgust","sadness","anger","fear"]
     emotionArray.forEach(element => {
+        console.log(element);
         if (getEmotion === element[0]){
             console.log(getEmotion)
        
@@ -34,7 +42,11 @@ const myChart = new Chart(ctx, {
         xlabels: xlabels,
         datasets: [{
             label: 'Emotional Trends',
+<<<<<<< HEAD
             data: [(localStorage.getItem.emotionArray)],
+=======
+            data: Object.values(getEmotionNumbers),
+>>>>>>> 9e5c64bc1350bdc935304b968228ac180eb5b545
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
