@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src= "https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.min.js"></script>
+    <link rel="stylesheet" href="assets/style2.css">
 </head>
 
+<body>
 <canvas id="myChart" width="400" height="400"></canvas>
 <script>
-const ctx = document.getElementById('myChart').getContext('2d');
-const xlabels = [];
-const myChart = new Chart(ctx, {
-    type: 'bar',
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
     data: {
-        labels: xlabels,
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
-            label: 'Emotional Trends',
-            data: [12, 19, 3, 5, 2, 3],
+            label: '# of Votes',
+            data: [emotions_detected],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -47,13 +48,36 @@ const myChart = new Chart(ctx, {
     }
 });
 
-getData();
+//getData();
 
-asynch function getData(){
-    const
+//function getData() {
+    //const response = fetch(' .csv')
+    //const data = await response.text ();
+    //const table = data.split('/n').slice(1);
+    //table.forEach( row => {
+      //  const columns = row.split (',');
+        //const day = columns [0];
+        //xlabels.push()
+        //const mood = columns[1]
+        //console.log(day,temp)
+   // });
 
-}
+//}
 </script>
+</section>
+<section>
+        <h5>Tell me something that happened and how are you feeling about it?</h5>
+        <form action="#">
+            <p>
+              <label>
+                <input type="text" id="feelingInput" value=""><br>
+              </label>
+
+              <button id="feelingBtn" type="submit">Submit</button>
+            </p>
+            <p>
+
+</section>
 
 <ul class="collapsible">
   <li>
@@ -69,8 +93,9 @@ asynch function getData(){
     <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
   </li>
 </ul>
-</head>
-<body>
+
+
+<script src="assets/graph.js"></script>
     
 </body>
 </html>
