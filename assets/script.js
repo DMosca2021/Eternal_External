@@ -110,6 +110,7 @@ function renderQuiz() {
             }
             renderQuestions();
 
+            //Left off with moving functions around to get answers to display correctly. Had questions switching with each save button click, answers were also switching but not displaying correctly in each checkbox. 
 
         });
         
