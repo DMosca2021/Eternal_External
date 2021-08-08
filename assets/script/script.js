@@ -191,6 +191,7 @@ function isChecked() {
         checkBox3.disabled = true;
         checkBox4.disabled = true;
         let userChoice = advice2.innerHTML
+        console.log(userChoice)
         choiceHist.push(userChoice)
         localStorage.setItem("userChoice", JSON.stringify(choiceHist))
     }
@@ -199,6 +200,7 @@ function isChecked() {
         checkBox2.disabled = true;
         checkBox4.disabled = true;
         let userChoice = advice3.innerHTML
+        console.log(userChoice)
         choiceHist.push(userChoice)
         localStorage.setItem("userChoice", JSON.stringify(choiceHist))
     }
@@ -207,6 +209,7 @@ function isChecked() {
         checkBox2.disabled = true;
         checkBox3.disabled = true;
         let userChoice = advice4.innerHTML
+        console.log(userChoice)
         choiceHist.push(userChoice)
         localStorage.setItem("userChoice", JSON.stringify(choiceHist))
     }
