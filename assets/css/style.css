@@ -10,12 +10,15 @@ h1 {
     font-family: 'Montserrat', sans-serif;
     color: whitesmoke;
     border: rgb(0, 137, 139) solid 4px;
+    border-radius: 10px;
     background-color: #85c9d3; 
     padding: 10px; 
     
 }
 
-
+.flow-text{
+    font-size: 20px;
+}
 ul {
     background-color: none;
     color: whitesmoke;
@@ -30,10 +33,15 @@ h5 {
     background-color: #265d67;
 }
 
-.card {
-    background-color: #eaf4f5;
-    padding: 5px;
-    font-family: 'Montserrat', sans-serif;
+.modal {
+    border: mediumaquamarine 4px solid;
+    border-radius: 10px;
+    padding: 5%;
+}
+
+.modal {
+    background-image: url("images/cancel.png");
+                  
 }
 
 .dropdown-content{
