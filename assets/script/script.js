@@ -22,7 +22,7 @@ let checkBox3 = document.querySelector("#choice3");
 let checkBox4 = document.querySelector("#choice4");
 
 let startBtn = document.querySelector(".start-quiz");
-let submitBtn = document.querySelector("#submit");
+let submitBtn = document.querySelector("#submit-choice");
 let questionIndex = 0
 let choiceHist = JSON.parse(localStorage.getItem("userChoice")) || [];
 
@@ -94,6 +94,7 @@ function renderQuiz() {
 
             submitBtn.addEventListener("click", function(event){
                 event.preventDefault();
+                isChecked();
                 storeChoice();
                 nextQuestion();
                 renderQuestions();
@@ -199,8 +200,9 @@ function storeChoice() {
     };
     console.log("<---End of storeChoice Function--->")
 };
-storeChoice();
+// storeChoice();
 
-startBtn.addEventListener("click", function(){
+startBtn.addEventListener("click", function(event){
+    event.preventDefault();
     startQuiz();
 });
