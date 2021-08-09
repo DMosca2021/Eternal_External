@@ -15,14 +15,14 @@ h1 {
     
 }
 
-/* .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
 
-} */
+ul {
+    background-color: none;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+}
 
-h4 {
+h5 {
     font-family: 'Montserrat', sans-serif;
 }
 .nav-content{
@@ -41,33 +41,6 @@ h4 {
     height:auto !important;
  }
 
-.modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(1.1);
-}
 
-.close-button {
-    float: right;
-    width: 1.5rem;
-    line-height: 1.5rem;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    background-color: lightgray;
-}
-.close-button:hover {
-    background-color: darkgray;
-}
-.show-modal {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-    
-} 
+
+ 

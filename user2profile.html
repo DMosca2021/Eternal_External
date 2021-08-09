@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="./assets/css/style.css">
 
@@ -17,18 +18,21 @@
       <li class="tab"><a href="userprofile.html">get Answers</a></li>
       <li class="tab"><a href="reviews.html">reviews and testimonials</a></li>
       <li class="tab"><a href="contact.html">contact us</a></li>
-      <li class="tab"><a href="aboutus.html">about us</a></li>
+      <li class="tab"><a href="index.html">about us</a></li>
     </ul>
   </nav>
   <header>
-    <h1>To preserve your wisdom...</h1>
+
+<div class="container">
+  <img src="./images/wavehand2.png" alt="EE logo">
+    <h1>User 2 The Dead</h1>
     <h2>Let's get to know you better</h2>
     <label for="fname">First name:</label><br>
     <input type="text" id="fname" name="userinput" value=""><br>
-    <button>submit</button><br/>
-    <hr>
-  </header>
-  <main>
+    <button id="submit" class="waves-effect waves-light btn" type="submit"><i class="material-icons right">cloud</i>submit</button>              
+    <button class="start-quiz waves-effect waves-light btn" type="submit"><i class="material-icons right">cloud</i>start quiz</button>              
+
+
     <button class="start-quiz">start quiz</button>
       <form class="question-display">
           <h5 class="question"></h5>
@@ -47,8 +51,9 @@
             </label>
             <input type="submit" value="save-choice" id="submit"/>
           </p>
-      </form>
-  </main>
+      </form> 
+</div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./assets/script/script.js"></script>
 </body>

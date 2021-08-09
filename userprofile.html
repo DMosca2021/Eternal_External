@@ -35,7 +35,7 @@
         <div class="input-name">
             <form id="form">
                 <h2>Let's get to know you better</h2>
-                <label for="name1">What can we call you?</label><br>
+                <h5>What can we call you?</h5>
                 <input type="text" id="userinput1" value=""><br>
                 <a href="#!" class="btn waves-effect waves-teal">Submit</a>        
           </div>
@@ -43,17 +43,54 @@
 </div>
 
 
-<h5>Tell me something that happened today and how are you feeling about it?</h5>
-<a class='dropdown-trigger btn' href='#' data-target='dropdown1'> <i class="material-icons">face</i></a>
+<h5>Do you need advice? I may have the answer...</h5>
+<a class='dropdown-trigger btn' href='#' data-target='dropdown1'> <i class="material-icons" style = "font-size: 35px">face</i></a>
 
 <!-- Dropdown Structure -->
 <ul id='dropdown1' class='dropdown-content'>
-  <li><a href="#!">Should I quit doing this?</a></li>
-  <li><a href="#!">I don't like my job... what should I do?</a></li>
-  <li><a href="#!">How do I ask for what I want in my relationship?</a></li>
-  <li><a href="#!"><i class="material-icons">view_module</i></a>I really need a confidence boost today!</li>
-  <li><a href="#!"><i class="material-icons">cloud</i></a>If you were still here what would you say?</li>
-</ul>git 
+  <li><a class="waves-effect waves-dark white-text btn modal-trigger" href="#modal1" id="advice1"><i class="material-icons">cancel</i>Should I quit doing this?</a></li>
+  <li><a class="waves-effect waves-dark white-text btn modal-trigger" href="#modal2" id="advice2"><i class="material-icons">cake</i>I don't like my job... what should I do?</a></li>
+  <li><a class="waves-effect waves-dark white-text btn modal-trigger" href="#modal3" id="advice3"><i class="material-icons">favorite_border</i>How do I ask for what I want in my relationship?</a></li>
+  <li><a class="waves-effect waves-dark white-text btn modal-trigger" href="#modal4" id="advice4"><i class="material-icons">insert_emoticon</i>I really need a confidence boost today!</a></li>
+  <li><a class="waves-effect waves-dark white-text btn modal-trigger" href="#modal5" id="advice5"><i class="material-icons">cloud</i>If you were still here what would you say?</a></li>
+</ul> 
+
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">exit</a>
+      <i class="material-icons"><i>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">exit</a>
+    </div>
+  </div>
+  <div id="modal3" class="modal">
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">exit</a>
+    </div>
+  </div>
+  <div id="modal4" class="modal">
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">exit</a>
+    </div>
+  </div>
+  <div id="modal5" class="modal">
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">exit</a>
+    </div>
+  </div>
+
+
+
+
+
+
+
   <section>
         <h5>Tell me something that happened today and how are you feeling about it?</h5>
         <form action="#">
@@ -62,16 +99,11 @@
                 <input type="text" id="feelingInput" value=""><br>
               </label>
 
-              <button id="feelingBtn" type="submit">Submit</button>
+              <button id="feelingBtn" class="waves-effect waves-light btn" type="submit"><i class="material-icons right">cloud</i>submit</button>              
+          
             </p>
         
             <div id="emotional-response-btn"></div>
-
-            <div id ="feeling-modal" class="modal">
-                <h1>I am the modal</h1>
-              </div>
-            </div>
-          
 
         <script src="./assets/script/scriptU1.js"></script>
         

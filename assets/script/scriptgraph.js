@@ -8,30 +8,38 @@ console.log(getEmotionNumbers);
 console.log(Object.values(getEmotionNumbers));
 
 var emotionValues = Object.values(getEmotionNumbers);
+emotionText.textContent = 'That is so good to hear! I hope the rest of your week is the same way!'
 
 document.createElement
 
 
-//function user2response() {
-    emotionArray = ["joy","surprise","disgust","sadness","anger","fear"]
-    emotionArray.forEach(element => {
+function user2response() {
+   let emotionArray = ["joy","surprise","disgust","sadness","anger","fear"]
+   console.log(emotionArray)
+    array.forEach(element => {
         console.log(element);
-        if (getEmotion === element[0]){
+
+        if (element == "joy"){
             console.log(getEmotion)
-       
             emotionText.textContent = 'That is so good to hear! I hope the rest of your week is the same way!'
+       
+        
+        }
+
+        
+       user2response 
+    });
+
     
     
             //devin could you have user2 write a response save it to local storage and then their input would replace what is in text content? 
             //not to worry the sun will come out tomorrow
-        }
+    }
         
-    });
+ 
     
     
-//}
 
-//user2response()
 
 //want to look at graph again! 
 const ctx = document.getElementById('myChart').getContext('2d');
@@ -73,12 +81,3 @@ const myChart = new Chart(ctx, {
     }
 });
 
-//getData();
-
-
-
-
-// asynch function getData(){
-//     const
-
-// }

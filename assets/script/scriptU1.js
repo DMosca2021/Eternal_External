@@ -4,6 +4,10 @@ const numberBg = document.getElementById("#main")
 const feelingInputForm = document.getElementById("feelingInput");
 const feelingBtn = document.querySelector("#feelingBtn")
 var emotionsDetected = ""
+const modal1 = document.getElementById("modal1")
+const advice1 = document.getElementById("advice1")
+var getUserChoice = JSON.parse(localStorage.getItem("userChoice"))|| [];
+
 
 
 
@@ -17,10 +21,17 @@ form.addEventListener('submit', function(event) {
     }
 );
 
-// "https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/?text=After%20living%20abroad%20for%20such%20a%20long%20time%2C%20seeing%20my%20family%20was%20the%20best%20present%20I%20could%20have%20ever%20wished%20for."
 
-//instead of spaces need %20 
-//.replace(" ") %20  feeling input 
+var adviceP = document.createElement("p")
+adviceP.textContent = getUserChoice
+
+modal1.append(adviceP)
+
+
+
+
+
+
 function getFeeling () {
 console.log(feelingInputForm.value)
 	if (feelingInputForm !== null) {
@@ -56,14 +67,6 @@ return data
 });
 
 }
-//  function getPopUp() {
-// 		var popUpBox = document.getElementById('feeling-modal');
-// 		console.log(popUpBox);
-// 		console.log('feeling-modal');
-// 		popUpBox.setAttribute("style", "visibility: visible;");
-// 		console.log(getPopUp);
-		
-//  		}
 	
 
 
@@ -80,6 +83,8 @@ function feelingFeedback(emotionalData) {
 			feelingBtnEl.textContent = element
 			
 			feelingBtnDiv.append(feelingBtnEl)
+			feelingBtnEl.setAttribute("style", "background-color: teal; border-radius:5px; text-transform:uppercase;font-size:3vw;font-weight:bold;")
+
 			feelingBtnEl.addEventListener("click", function name() {
 
 				
@@ -133,20 +138,10 @@ $(document).ready(function(){
 
 
 
+ $(document).ready(function(){
+    $('.modal').modal();
+  });
+
+
 //onbutton click a response shows up with a "Oh I see you are feeling + emotions detected + "thats so good to hear!"
-//if emotions detected = sad then respond "That's too bad you are sad"
-
-
-
-//how to apply data to btn
-//pull it out of the object 
-// document.addEventListener('DOMContentLoaded', function() {
-//     var elems = document.querySelectorAll('select');
-//     var instances = M.FormSelect.init(elems, options);
-// ;
-//   });
-
- 
-
-//write a function to pull emotion 
-
+//if emotions detected = sad then respond "That's too bad you are
