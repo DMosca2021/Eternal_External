@@ -68,3 +68,13 @@ This will also give you an opportunity to review the requirements for the projec
 //keeping 
 //
 >>>>>>> 6683eca9b49fbdbd4b5f3ffa2493906b6af59ef1:assets/README.md
+
+
+
+//store advice 
+//return advice based on drop down selection
+
+//figure out the return statement on graph page
+
+//graph needs to pull response from local storage 
+//format css

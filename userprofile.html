@@ -8,6 +8,8 @@
 
 
         <!-- Compiled and minified JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css"/>
@@ -33,37 +35,61 @@
         <div class="input-name">
             <form id="form">
                 <h2>Let's get to know you better</h2>
-                <label for="name1">What can we call you?</label><br>
+                <h5>What can we call you?</h5>
                 <input type="text" id="userinput1" value=""><br>
                 <a href="#!" class="btn waves-effect waves-teal">Submit</a>        
           </div>
   
 </div>
 
-<a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+
+<h5>Do you need advice? I may have the answer...</h5>
+<a class='dropdown-trigger btn' href='#' data-target='dropdown1'> <i class="material-icons" style = "font-size: 35px">face</i></a>
 
 <!-- Dropdown Structure -->
 <ul id='dropdown1' class='dropdown-content'>
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider" tabindex="-1"></li>
-  <li><a href="#!">three</a></li>
-  <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-  <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-</ul>
-<!-- <section class = drop-down>
-<div class="input-field col s12">
-  <select>
-    <option value="" disabled selected>What advice do you need? </option>
-    <option value="1">Should I quit this?</option>
-    <option value="2">I don't like my job... what should I do?</option>
-    <option value="3">How do I ask for what I want in my relationship?</option>
-    <option value="3">I really need a confidence boost today!</option>
-    <option value="3">If you were still here what would you say?</option>
-  </select>
-  <label></label>
-</div>
-</section> -->
+  <li><a class="waves-effect waves-dark white-text btn modal-trigger" href="#modal1" id="advice1">Should I quit doing this?</a></li>
+  <li><a class="waves-effect waves-dark white-text btn modal-trigger" href="#modal2" id="advice2">I don't like my job... what should I do?</a></li>
+  <li><a class="waves-effect waves-dark white-text btn modal-trigger" href="#modal3" id="advice3">How do I ask for what I want in my relationship?</a></li>
+  <li><a class="waves-effect waves-dark white-text btn modal-trigger" href="#modal4" id="advice4"><i class="material-icons">view_module</i>I really need a confidence boost today!</a></li>
+  <li><a class="waves-effect waves-dark white-text btn modal-trigger" href="#modal5" id="advice5"><i class="material-icons">cloud</i>If you were still here what would you say?</a></li>
+</ul> 
+
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">exit</a>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">exit</a>
+    </div>
+  </div>
+  <div id="modal3" class="modal">
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">exit</a>
+    </div>
+  </div>
+  <div id="modal4" class="modal">
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">exit</a>
+    </div>
+  </div>
+  <div id="modal5" class="modal">
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">exit</a>
+    </div>
+  </div>
+
+
+
+
+
+
+
   <section>
         <h5>Tell me something that happened today and how are you feeling about it?</h5>
         <form action="#">
@@ -72,16 +98,11 @@
                 <input type="text" id="feelingInput" value=""><br>
               </label>
 
-              <button id="feelingBtn" type="submit">Submit</button>
+              <button id="feelingBtn" class="waves-effect waves-light btn" type="submit"><i class="material-icons right">cloud</i>submit</button>              
+          
             </p>
         
             <div id="emotional-response-btn"></div>
-
-            <div id ="feeling-modal" class="modal">
-                <h1>I am the modal</h1>
-              </div>
-            </div>
-          
 
         <script src="./assets/script/scriptU1.js"></script>
         

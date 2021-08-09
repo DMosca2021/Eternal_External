@@ -1,42 +1,58 @@
 const emotionSpan = document.getElementById('emotion-span')
 const emotionText = document.getElementById('emotion-span-text')
-
+var getEmotionNumbers = JSON.parse(localStorage.getItem("emotion-scores"))|| [];
 var getEmotion = JSON.parse(localStorage.getItem("emotion-detect"))|| [];
 emotionSpan.textContent = getEmotion
+
+console.log(getEmotionNumbers);
+console.log(Object.values(getEmotionNumbers));
+
+var emotionValues = Object.values(getEmotionNumbers);
+emotionText.textContent = 'That is so good to hear! I hope the rest of your week is the same way!'
+
+document.createElement
 
 
 function user2response() {
    let emotionArray = ["joy","surprise","disgust","sadness","anger","fear"]
    console.log(emotionArray)
-    emotionArray.forEach(element => {
-        console.log(element)
-        if (getEmotion === element[0]){
+    array.forEach(element => {
+        console.log(element);
+
+        if (element == "joy"){
             console.log(getEmotion)
-       
             emotionText.textContent = 'That is so good to hear! I hope the rest of your week is the same way!'
+       
+        
+        }
+
+        
+       user2response 
+    });
+
     
     
             //devin could you have user2 write a response save it to local storage and then their input would replace what is in text content? 
             //not to worry the sun will come out tomorrow
-        }
+    }
         
-    });
+ 
     
     
-}
 
-user2response()
 
 //want to look at graph again! 
 const ctx = document.getElementById('myChart').getContext('2d');
 const xlabels = [];
 const myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
-        labels: xlabels,
+        xlabels: xlabels,
         datasets: [{
             label: 'Emotional Trends',
-            data: [12, 19, 3, 5, 2, 3],
+
+            data: Object.values(getEmotionNumbers),
+
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -65,12 +81,3 @@ const myChart = new Chart(ctx, {
     }
 });
 
-// getData();
-
-
-
-
-// asynch function getData(){
-//     const
-
-// }

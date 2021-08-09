@@ -1,20 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
 body {
-    background-color: #ffcdd2;
+    background-color:lightblue;
     max-width: 100%;
     margin: auto;
 }
 h1 {
-    background-color: #ef9a9a; 
+    font-family: 'Montserrat', sans-serif;
+    color: whitesmoke;
+    border: rgb(0, 137, 139) solid 4px;
+    background-color: #85c9d3; 
     padding: 10px; 
-    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
 }
 .nav-content{
-    background-color: #ff5252;
-    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #265d67;
 }
 
 .card {
-    background-color: #ff8a80;
+    background-color: #eaf4f5;
     padding: 5px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
