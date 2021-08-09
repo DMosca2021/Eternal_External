@@ -1,54 +1,13 @@
-// pseudo-code and experiments 
+// Items left to complete:
+    // Finish setting up local storage for chosen answers to quiz.****** THIS IS CRITICAL FOR THE APP TO WORK ****
+    // Change alerts to modals.
+        //At end of quiz display modal alerting user that their loved ones will now have access to their advice.
+    // Link the quiz answers to the user1 JS. 
+// Bonus Items:
+    // Possibly add a next button instead of using the save button to change questions. 
+    // Create a text input to display on graph page for user2 to "respond" to user1's input.
 
-// console.log("-----------")
-// console.log("Advice slip API")
 
-// fetch("https://api.adviceslip.com/advice/search/advice")
-// .then(function(response) {
-//     return response.json();
-// })
-// .then(function(data) {
-//     console.log(data);
-// })
-        // console logs to get the advice slips from API, advice to be used as answers for the questions 
-        // console.log(data);
-        // console.log(data.slips[166].advice);
-        // console.log(data.slips[161].advice);
-        // console.log(data.slips[42].advice);
-        // console.log(data.slips[48].advice);
-        // console.log("-------------")
-        // console.log(data.slips[65].advice)
-        // console.log(data.slips[77].advice)
-        // console.log(data.slips[82].advice)
-        // console.log(data.slips[52].advice)
-        // console.log("-------------")
-        // console.log(data.slips[90].advice)
-        // console.log(data.slips[98].advice)
-        // console.log(data.slips[100].advice)
-        // console.log(data.slips[110].advice)
-        // console.log("-------------")
-        // console.log(data.slips[124].advice)
-        // console.log(data.slips[143].advice)
-        // console.log(data.slips[39].advice)
-        // console.log(data.slips[101].advice)
-        // console.log("-------------")
-        // console.log(data.slips[112].advice)
-        // console.log(data.slips[114].advice)
-        // console.log(data.slips[128].advice)
-        // console.log(data.slips[59].advice)
-
-        // let questionsArray = ["Someone you love is about to quit something that brings them joy. What would you tell them?", "Your loved one is having a hard time at their job and they do not want to continue working at their current job.", "A person close to you is having trouble in their relationship, they asked: How do i ask for what i want?", "Your loved one is in need of a boost of confidence, tell them something to pick them up", "Your loved one has asked, What would you tell me if you were still here today, what is your response?"]
-        // let quitAdviceArray = [data.slips[166].advice, data.slips[161].advice, data.slips[42].advice, data.slips[48].advice]
-        // let workAdviceArray = [data.slips[65].advice, data.slips[77].advice, data.slips[82].advice, data.slips[52].advice]
-        // let loveAdviceArray = [data.slips[90].advice, data.slips[98].advice, data.slips[100].advice, data.slips[110].advice]
-        // let confidenceAdviceArray = [data.slips[124].advice, data.slips[143].advice, data.slips[39].advice, data.slips[101].advice]
-        // let randomAdviceArray = [data.slips[112].advice, data.slips[114].advice, data.slips[128].advice, data.slips[59].advice]
-
-// Check one box that represents the answer, answers will be listed from adivce slip query.
-    // use a form for the answers and have a sumbit/next button to save choice & move to next Q
-// Ex: of advice slip as option to choose. {search fail} 
-        // at the end of quiz display all chosen answers and give option to restart quiz to change answers.
-        // display message alerting user that their loved ones will now have access to their advice.
 
 let questionDisplay = document.querySelector(".question-display");
 let shownQuestion = document.querySelector(".question");
@@ -100,7 +59,7 @@ function renderQuiz() {
                 }
             ]
 
-            let availableQuestions = [...questionsArray]
+            let availableQuestions = [...questionsArray] // Not exactly sure what the [...array] does. Used it on quiz homework and it works here. 
 
             console.log("<---Initial Question index followed by all of the available questions put into an array--->")
 
@@ -122,7 +81,6 @@ function renderQuiz() {
                     console.log(answerIndex[1]);
                     console.log(answerIndex[2]);
                     console.log(answerIndex[3]);
-
 
                     advice1.innerHTML = answerIndex[0]
                     advice2.innerHTML = answerIndex[1]
@@ -152,7 +110,7 @@ function nextQuestion() {
     if (checkBox1.checked == true || checkBox2.checked == true || checkBox3.checked == true || checkBox4.checked == true) {
         questionIndex++
         if (questionIndex >= 5){
-            alert("Quiz complete!")
+            alert("Quiz complete!") // <----- CHANGE TO A MODAL!!!!
             startBtn.disabled = true
             submitBtn.disabled = true
         }
@@ -170,6 +128,7 @@ function nextQuestion() {
     console.log("<---End of nextQuestion Function--->")
 };
 
+// I think the isChecked function can be cleaned up a bit. Pretty sure I can set it up the same as the storeChoice function and use else if statements. As is the function works and will look into cleaning it up after the local storage issues are sorted out. 
 
 function isChecked() {
     console.log("<-----Start of isChecked Function----->")
@@ -179,7 +138,7 @@ function isChecked() {
     console.log(checkBox4.checked);
     console.log("<--------->")
      if (checkBox1.checked == false && checkBox2.checked == false && checkBox3.checked == false && checkBox4.checked == false) {
-        alert("Choose an advice slip")
+        alert("Choose an advice slip") // <----- CHANGE TO A MODAL!!!!
      } 
      if (checkBox1.checked == true) {
          checkBox2.disabled = true;
