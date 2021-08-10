@@ -8,6 +8,13 @@ const modal1 = document.getElementById("modal1")
 const advice1 = document.getElementById("advice1")
 var getUserChoice = JSON.parse(localStorage.getItem("userChoice"))|| [];
 
+// Making modal variables to get advice from local storage. 
+let chosenAdvice1 = document.querySelector("#advice-choice1");
+let chosenAdvice2 = document.querySelector("#advice-choice2");
+let chosenAdvice3 = document.querySelector("#advice-choice3");
+let chosenAdvice4 = document.querySelector("#advice-choice4");
+let chosenAdvice5 = document.querySelector("#advice-choice5");
+
 
 
 
@@ -15,20 +22,31 @@ form.addEventListener('submit', function(event) {
     event.preventDefault();
     var user1Input = document.querySelector('#userinput1').value;
     console.log("user1Input " + user1Input)
-    
-        localStorage.setItem("name",JSON.stringify(user1Input));
-        document.querySelector('#userinput1').value = "";
-    }
-);
+    localStorage.setItem("name",JSON.stringify(user1Input));
+    document.querySelector('#userinput1').value = "";
+});
 
 
-var adviceP = document.createElement("p")
-adviceP.textContent = getUserChoice
-
-modal1.append(adviceP)
-
-
-
+// Function to show the stored advice. We do not need the getStoredAdvice function, put that there for checking if the stored answers are correct. 
+console.log("<-----getStoredAdvice----->")
+function getStoredAdvice() {
+	console.log(getUserChoice);
+	console.log(getUserChoice[0]);
+	console.log(getUserChoice[1]);
+	console.log(getUserChoice[2]);
+	console.log(getUserChoice[3]);
+	console.log(getUserChoice[4]);
+	function showAdvice() {
+		chosenAdvice1.textContent = getUserChoice[0];
+		chosenAdvice2.textContent = getUserChoice[1];
+		chosenAdvice3.textContent = getUserChoice[2];
+		chosenAdvice4.textContent = getUserChoice[3];
+		chosenAdvice5.textContent = getUserChoice[4];
+	}
+	showAdvice();
+}
+getStoredAdvice();
+console.log("<---End--->")
 
 
 

@@ -1,9 +1,9 @@
 // Items left to complete:
-    // Finish setting up local storage for chosen answers to quiz.****** THIS IS CRITICAL FOR THE APP TO WORK ****
     // Change alerts to modals.
         //At end of quiz display modal alerting user that their loved ones will now have access to their advice.
-    // Link the quiz answers to the user1 JS. 
-// Bonus Items:
+    
+// Bonus Items(future development):
+    // After quiz ends and hides, show a list of the chosen answers 
     // Possibly add a next button instead of using the save button to change questions. 
     // Create a text input to display on graph page for user2 to "respond" to user1's input.
 
@@ -15,27 +15,35 @@ let advice1 = document.querySelector("#choice-text1");
 let advice2 = document.querySelector("#choice-text2");
 let advice3 = document.querySelector("#choice-text3");
 let advice4 = document.querySelector("#choice-text4");
-
 let checkBox1 = document.querySelector("#choice1");
 let checkBox2 = document.querySelector("#choice2");
 let checkBox3 = document.querySelector("#choice3");
 let checkBox4 = document.querySelector("#choice4");
-
 let startBtn = document.querySelector(".start-quiz");
 let submitBtn = document.querySelector("#submit-choice");
-let questionIndex = 0
+let questionIndex = 0;
 let choiceHist = JSON.parse(localStorage.getItem("userChoice")) || [];
 
 questionDisplay.setAttribute("style", "visibility: hidden");
 
+// Starts quiz, shows questions, start quiz button disabled to prevent clicking during quiz.
 function startQuiz() {
     questionDisplay.setAttribute("style", "visibility: visible");
-    renderQuiz()
+    startBtn.disabled = true;
+    submitBtn.disabled = false;
+    renderQuiz();
 };
+// Ends quiz, hides questions, sends an alert(modal), disables the submit button/enables start quiz button
+function endQuiz(){
+    questionDisplay.setAttribute("style", "visibility: hidden");
+    alert("Quiz complete!"); // <----- CHANGE TO A MODAL!!!!
+    startBtn.disabled = false;
+    submitBtn.disabled = true;
+}
 
-
+// Fetches data from advice slip API, creates questions with associated answers. 
 function renderQuiz() {
-    function obtainData () {
+    function fetchData () {
         fetch("https://api.adviceslip.com/advice/search/a")
         .then(function(response) {
             return response.json();
@@ -61,15 +69,16 @@ function renderQuiz() {
 
             let availableQuestions = [...questionsArray] // Not exactly sure what the [...array] does. Used it on quiz homework and it works here. 
 
-            console.log("<---Initial Question index followed by all of the available questions put into an array--->")
+            console.log("<---Initial Question index followed by all of the available questions put into an array--->");
 
-            console.log(questionIndex)
-            console.log(availableQuestions)
+            console.log(questionIndex);
+            console.log(availableQuestions);
 
-            console.log("<-----Start of renderQuestions Function------>")
+            console.log("<-----Start of renderQuestions Function------>");
+            // Shows the current question and its associated answers
             function renderQuestions() {
                 let currentQuestion = availableQuestions[questionIndex];
-                console.log("<---Shows current question--->")
+                console.log("<---Shows current question--->");
                 console.log(currentQuestion.question);
 
                 shownQuestion.innerHTML = currentQuestion.question;
@@ -90,8 +99,8 @@ function renderQuiz() {
                 });
             }
             renderQuestions();
-            console.log("<---End of renderQuestions Function--->")
-
+            console.log("<---End of renderQuestions Function--->");
+            // Submit button to save user choices to local storage, changes question and renders next question.
             submitBtn.addEventListener("click", function(event){
                 event.preventDefault();
                 isChecked();
@@ -99,47 +108,44 @@ function renderQuiz() {
                 nextQuestion();
                 renderQuestions();
             })
-
         });
-        
     };
-    obtainData();
+    fetchData();
 };
-
+// Function to display the next question, once end of question array is reached quiz is ended.
 function nextQuestion() {
     console.log("<-----Start of nextQuestion Function----->")
     if (checkBox1.checked == true || checkBox2.checked == true || checkBox3.checked == true || checkBox4.checked == true) {
-        questionIndex++
+        questionIndex++;
         if (questionIndex >= 5){
-            alert("Quiz complete!") // <----- CHANGE TO A MODAL!!!!
-            startBtn.disabled = true
-            submitBtn.disabled = true
+            endQuiz();
         }
-        console.log("<---Shows increase in question index, displays next question and answers--->")
+        console.log("<---Shows increase in question index, displays next question and answers--->");
         console.log(questionIndex);
-        checkBox1.checked = false
-        checkBox2.checked = false
-        checkBox3.checked = false
-        checkBox4.checked = false
-        checkBox1.disabled = false
-        checkBox2.disabled = false
-        checkBox3.disabled = false
-        checkBox4.disabled = false
+        checkBox1.checked = false;
+        checkBox2.checked = false;
+        checkBox3.checked = false;
+        checkBox4.checked = false;
+        checkBox1.disabled = false;
+        checkBox2.disabled = false;
+        checkBox3.disabled = false;
+        checkBox4.disabled = false;
     }
-    console.log("<---End of nextQuestion Function--->")
+    console.log("<---End of nextQuestion Function--->");
 };
 
-// I think the isChecked function can be cleaned up a bit. Pretty sure I can set it up the same as the storeChoice function and use else if statements. As is the function works and will look into cleaning it up after the local storage issues are sorted out. 
+// ****I think the isChecked function can be cleaned up a bit. Pretty sure I can set it up the same as the storeChoice function and use else if statements. As is the function works and will look into cleaning it up after the local storage issues are sorted out.****
 
+// Function to check if checkboxes are checked, disables non chosen boxes to prevent multiple choices. Alerts to choose a box if none chosen.
 function isChecked() {
-    console.log("<-----Start of isChecked Function----->")
+    console.log("<-----Start of isChecked Function----->");
     console.log(checkBox1.checked);
     console.log(checkBox2.checked);
     console.log(checkBox3.checked);
     console.log(checkBox4.checked);
-    console.log("<--------->")
+    console.log("<--------->");
      if (checkBox1.checked == false && checkBox2.checked == false && checkBox3.checked == false && checkBox4.checked == false) {
-        alert("Choose an advice slip") // <----- CHANGE TO A MODAL!!!!
+        alert("Choose an advice slip"); // <----- CHANGE TO A MODAL!!!!
      } 
      if (checkBox1.checked == true) {
          checkBox2.disabled = true;
@@ -167,16 +173,11 @@ function isChecked() {
         checkBox2.disabled = true;
         checkBox3.disabled = true;
     }
-    console.log("<---End of isChecked Function--->")
+    console.log("<---End of isChecked Function--->");
 };
-
-// -------------- Having issues with getting advice to store correctly ---------------
-// This is the function to store the users choices. Works for checkBox1 but the others do not work. 
-    // When you click on the check box it should store the user choice and the text associated with it, I am grabbing it through the advice1 variable which is tied to the text display for the checkbox. 
-        // What actually happens is when you click on checkBox1 for any of the questions, it will store to the local storage correctly. If any other checkbox is clicked, nothing gets added to local storage, used the same code just with appropriate variables to store the choice as I did for checkBox1.
-
+// Function to store chosen check box's advice slip. All are added to the choiceHist array for future use. 
 function storeChoice() {
-    console.log("<-----Start of storeChoice Function----->")
+    console.log("<-----Start of storeChoice Function----->");
     let userChoice = advice1;
     let userChoice2 = advice2;
     let userChoice3 = advice3;
@@ -184,24 +185,25 @@ function storeChoice() {
     if (checkBox1.checked == true) {
         console.log(userChoice.innerHTML); //Shows the answer as a string
         choiceHist.push(userChoice.innerHTML); // Adds to the choiceHist array 
-        localStorage.setItem("userChoice", JSON.stringify(choiceHist)) // Stores it locally in the choiceHist array
+        localStorage.setItem("userChoice", JSON.stringify(choiceHist));
     } else if (checkBox2.checked == true) {
         console.log(userChoice2.innerHTML); 
-        choiceHist.push(userChoice2);
-        localStorage.setItem("userChoice2", JSON.stringify(choiceHist))
+        choiceHist.push(userChoice2.innerHTML);
+        localStorage.setItem("userChoice2", JSON.stringify(choiceHist));
     } else if (checkBox3.checked == true) {
         console.log(userChoice3.innerHTML);
-        choiceHist.push(userChoice3);
-        localStorage.setItem("userChoice3", JSON.stringify(choiceHist))
+        choiceHist.push(userChoice3.innerHTML);
+        localStorage.setItem("userChoice3", JSON.stringify(choiceHist));
     } else if (checkBox4.checked == true) {
         console.log(userChoice4.innerHTML);
-        choiceHist.push(userChoice4);
-        localStorage.setItem("userChoice4", JSON.stringify(choiceHist))
+        choiceHist.push(userChoice4.innerHTML);
+        localStorage.setItem("userChoice4", JSON.stringify(choiceHist));
     };
-    console.log("<---End of storeChoice Function--->")
+    console.log(choiceHist);
+    console.log("<---End of storeChoice Function--->");
 };
-// storeChoice();
 
+// Start button
 startBtn.addEventListener("click", function(event){
     event.preventDefault();
     startQuiz();
