@@ -1,9 +1,9 @@
 // Items left to complete:
-    // Link the quiz answers to the user1 JS.*** 
     // Change alerts to modals.
         //At end of quiz display modal alerting user that their loved ones will now have access to their advice.
     
-// Bonus Items:
+// Bonus Items(future development):
+    // After quiz ends and hides, show a list of the chosen answers 
     // Possibly add a next button instead of using the save button to change questions. 
     // Create a text input to display on graph page for user2 to "respond" to user1's input.
 
@@ -15,12 +15,10 @@ let advice1 = document.querySelector("#choice-text1");
 let advice2 = document.querySelector("#choice-text2");
 let advice3 = document.querySelector("#choice-text3");
 let advice4 = document.querySelector("#choice-text4");
-
 let checkBox1 = document.querySelector("#choice1");
 let checkBox2 = document.querySelector("#choice2");
 let checkBox3 = document.querySelector("#choice3");
 let checkBox4 = document.querySelector("#choice4");
-
 let startBtn = document.querySelector(".start-quiz");
 let submitBtn = document.querySelector("#submit-choice");
 let questionIndex = 0;
