@@ -28,13 +28,14 @@ let choiceHist = JSON.parse(localStorage.getItem("userChoice")) || [];
 
 questionDisplay.setAttribute("style", "visibility: hidden");
 
+// Starts quiz, shows questions, start quiz button disabled to prevent clicking during quiz.
 function startQuiz() {
     questionDisplay.setAttribute("style", "visibility: visible");
     startBtn.disabled = true;
     submitBtn.disabled = false;
     renderQuiz();
 };
-
+// Ends quiz, hides questions, sends an alert(modal), disables the submit button/enables start quiz button
 function endQuiz(){
     questionDisplay.setAttribute("style", "visibility: hidden");
     alert("Quiz complete!"); // <----- CHANGE TO A MODAL!!!!
@@ -42,7 +43,7 @@ function endQuiz(){
     submitBtn.disabled = true;
 }
 
-
+// Fetches data from advice slip API, creates questions with associated answers. 
 function renderQuiz() {
     function fetchData () {
         fetch("https://api.adviceslip.com/advice/search/a")
@@ -76,6 +77,7 @@ function renderQuiz() {
             console.log(availableQuestions);
 
             console.log("<-----Start of renderQuestions Function------>");
+            // Shows the current question and its associated answers
             function renderQuestions() {
                 let currentQuestion = availableQuestions[questionIndex];
                 console.log("<---Shows current question--->");
@@ -100,7 +102,7 @@ function renderQuiz() {
             }
             renderQuestions();
             console.log("<---End of renderQuestions Function--->");
-
+            // Submit button to save user choices to local storage, changes question and renders next question.
             submitBtn.addEventListener("click", function(event){
                 event.preventDefault();
                 isChecked();
@@ -112,7 +114,7 @@ function renderQuiz() {
     };
     fetchData();
 };
-
+// Function to display the next question, once end of question array is reached quiz is ended.
 function nextQuestion() {
     console.log("<-----Start of nextQuestion Function----->")
     if (checkBox1.checked == true || checkBox2.checked == true || checkBox3.checked == true || checkBox4.checked == true) {
@@ -134,8 +136,9 @@ function nextQuestion() {
     console.log("<---End of nextQuestion Function--->");
 };
 
-// I think the isChecked function can be cleaned up a bit. Pretty sure I can set it up the same as the storeChoice function and use else if statements. As is the function works and will look into cleaning it up after the local storage issues are sorted out. 
+// ****I think the isChecked function can be cleaned up a bit. Pretty sure I can set it up the same as the storeChoice function and use else if statements. As is the function works and will look into cleaning it up after the local storage issues are sorted out.****
 
+// Function to check if checkboxes are checked, disables non chosen boxes to prevent multiple choices. Alerts to choose a box if none chosen.
 function isChecked() {
     console.log("<-----Start of isChecked Function----->");
     console.log(checkBox1.checked);
@@ -174,7 +177,7 @@ function isChecked() {
     }
     console.log("<---End of isChecked Function--->");
 };
-
+// Function to store chosen check box's advice slip. All are added to the choiceHist array for future use. 
 function storeChoice() {
     console.log("<-----Start of storeChoice Function----->");
     let userChoice = advice1;
@@ -202,6 +205,7 @@ function storeChoice() {
     console.log("<---End of storeChoice Function--->");
 };
 
+// Start button
 startBtn.addEventListener("click", function(event){
     event.preventDefault();
     startQuiz();
