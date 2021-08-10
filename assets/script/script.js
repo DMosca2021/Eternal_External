@@ -23,14 +23,15 @@ let checkBox4 = document.querySelector("#choice4");
 
 let startBtn = document.querySelector(".start-quiz");
 let submitBtn = document.querySelector("#submit-choice");
-let questionIndex = 0
+let questionIndex = 0;
 let choiceHist = JSON.parse(localStorage.getItem("userChoice")) || [];
 
 questionDisplay.setAttribute("style", "visibility: hidden");
 
 function startQuiz() {
     questionDisplay.setAttribute("style", "visibility: visible");
-    renderQuiz()
+    startBtn.disabled = true;
+    renderQuiz();
 };
 
 
@@ -61,15 +62,15 @@ function renderQuiz() {
 
             let availableQuestions = [...questionsArray] // Not exactly sure what the [...array] does. Used it on quiz homework and it works here. 
 
-            console.log("<---Initial Question index followed by all of the available questions put into an array--->")
+            console.log("<---Initial Question index followed by all of the available questions put into an array--->");
 
-            console.log(questionIndex)
-            console.log(availableQuestions)
+            console.log(questionIndex);
+            console.log(availableQuestions);
 
-            console.log("<-----Start of renderQuestions Function------>")
+            console.log("<-----Start of renderQuestions Function------>");
             function renderQuestions() {
                 let currentQuestion = availableQuestions[questionIndex];
-                console.log("<---Shows current question--->")
+                console.log("<---Shows current question--->");
                 console.log(currentQuestion.question);
 
                 shownQuestion.innerHTML = currentQuestion.question;
@@ -90,7 +91,7 @@ function renderQuiz() {
                 });
             }
             renderQuestions();
-            console.log("<---End of renderQuestions Function--->")
+            console.log("<---End of renderQuestions Function--->");
 
             submitBtn.addEventListener("click", function(event){
                 event.preventDefault();
@@ -112,7 +113,7 @@ function nextQuestion() {
         questionIndex++
         if (questionIndex >= 5){
             alert("Quiz complete!") // <----- CHANGE TO A MODAL!!!!
-            startBtn.disabled = true
+            startBtn.disabled = false
             submitBtn.disabled = true
         }
         console.log("<---Shows increase in question index, displays next question and answers--->")
@@ -187,17 +188,18 @@ function storeChoice() {
         localStorage.setItem("userChoice", JSON.stringify(choiceHist)) // Stores it locally in the choiceHist array
     } else if (checkBox2.checked == true) {
         console.log(userChoice2.innerHTML); 
-        choiceHist.push(userChoice2);
+        choiceHist.push(userChoice2.innerHTML);
         localStorage.setItem("userChoice2", JSON.stringify(choiceHist))
     } else if (checkBox3.checked == true) {
         console.log(userChoice3.innerHTML);
-        choiceHist.push(userChoice3);
+        choiceHist.push(userChoice3.innerHTML);
         localStorage.setItem("userChoice3", JSON.stringify(choiceHist))
     } else if (checkBox4.checked == true) {
         console.log(userChoice4.innerHTML);
-        choiceHist.push(userChoice4);
+        choiceHist.push(userChoice4.innerHTML);
         localStorage.setItem("userChoice4", JSON.stringify(choiceHist))
     };
+    console.log(choiceHist)
     console.log("<---End of storeChoice Function--->")
 };
 // storeChoice();
