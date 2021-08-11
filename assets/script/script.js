@@ -221,3 +221,7 @@ user2Btn.addEventListener('click', function(event) {
     localStorage.setItem("name",JSON.stringify(user2Input));
     document.querySelector('#userinput2').value = "";
 });
+
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
