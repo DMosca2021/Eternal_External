@@ -189,15 +189,15 @@ function storeChoice() {
     } else if (checkBox2.checked == true) {
         console.log(userChoice2.innerHTML); 
         choiceHist.push(userChoice2.innerHTML);
-        localStorage.setItem("userChoice2", JSON.stringify(choiceHist));
+        localStorage.setItem("userChoice", JSON.stringify(choiceHist));
     } else if (checkBox3.checked == true) {
         console.log(userChoice3.innerHTML);
         choiceHist.push(userChoice3.innerHTML);
-        localStorage.setItem("userChoice3", JSON.stringify(choiceHist));
+        localStorage.setItem("userChoice", JSON.stringify(choiceHist));
     } else if (checkBox4.checked == true) {
         console.log(userChoice4.innerHTML);
         choiceHist.push(userChoice4.innerHTML);
-        localStorage.setItem("userChoice4", JSON.stringify(choiceHist));
+        localStorage.setItem("userChoice", JSON.stringify(choiceHist));
     };
     console.log(choiceHist);
     console.log("<---End of storeChoice Function--->");

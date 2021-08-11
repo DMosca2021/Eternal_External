@@ -1,4 +1,6 @@
 # adj_project1
+## Beginning psuedo-code and ideas.
+- not sure if we want to keep all of this?
 
 //compare quiz answers of user 1 vs. user 2 
 //based on answers true/false certain out puts will show up 
@@ -55,6 +57,20 @@ Show your TA all of the API requests you need working in Postman/Insomnia or wit
 JavaScript implementation should be pseudo-coded and actual coding started
 Presentation started (skeleton -- 10% complete)
 This will also give you an opportunity to review the requirements for the project :slightly_smiling_face:
+
+## Description (idea behind the app, what its uses in the real world would be.)
+
+## How to use (Describe how to use all features of the app.)
+
+- Add some screen shots to show the different pages.
+
+![Screenshot]()
+
+## How to access
+In order to access Eternal External. Follow the provided links to either the deployed application or the application repo on Github.
+
+- [Deployed Link](https://dmosca2021.github.io/adj_project1/)
+- [Repo Link](https://github.com/DMosca2021/adj_project1)
 
 ## Source links 
 - [Advice Slip API](https://api.adviceslip.com/#endpoint-search)
