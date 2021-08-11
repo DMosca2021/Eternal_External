@@ -211,3 +211,12 @@ startBtn.addEventListener("click", function(event){
     event.preventDefault();
     startQuiz();
 });
+
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    var user1Input = document.querySelector('#userinput2').value;
+    console.log("user2Input " + user1Input)
+    localStorage.setItem("name",JSON.stringify(user1Input));
+    document.querySelector('#userinput2').value = "";
+});
