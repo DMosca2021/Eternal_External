@@ -17,7 +17,6 @@ let chosenAdvice5 = document.querySelector("#advice-choice5");
 
 
 
-
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     var user1Input = document.querySelector('#userinput1').value;
@@ -39,6 +38,7 @@ function getStoredAdvice() {
 	console.log(getUserChoice[3]);
 	console.log(getUserChoice[4]);
 	function showAdvice() {
+		//do these in a for loop instead will check length of the array 
 		chosenAdvice1.textContent = getUserChoice[0];
 		chosenAdvice2.textContent = getUserChoice[1];
 		chosenAdvice3.textContent = getUserChoice[2];
@@ -163,5 +163,3 @@ $(document).ready(function(){
   });
 
 
-//onbutton click a response shows up with a "Oh I see you are feeling + emotions detected + "thats so good to hear!"
-//if emotions detected = sad then respond "That's too bad you are

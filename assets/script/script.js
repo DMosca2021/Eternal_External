@@ -79,6 +79,8 @@ function renderQuiz() {
             function renderQuestions() {
                 let currentQuestion = availableQuestions[questionIndex];
                 console.log("<---Shows current question--->");
+                //hits last question 
+                //need to check if it's the last question so renderQues doesn't run again 
                 console.log(currentQuestion.question);
 
                 shownQuestion.innerHTML = currentQuestion.question;
@@ -199,6 +201,7 @@ function storeChoice() {
         choiceHist.push(userChoice4.innerHTML);
         localStorage.setItem("userChoice", JSON.stringify(choiceHist));
     };
+    //removed number from user choice 
     console.log(choiceHist);
     console.log("<---End of storeChoice Function--->");
 };
