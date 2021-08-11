@@ -9,8 +9,8 @@ We wanted to create an app that allows a user to share information such as advic
 - Based on answers true/false certain outputs will store
 - Store user information for later use
 - Can we create a username and password to store the users information? 
-- Figure out how to link the user taking the quiz/giving the advice and user recieveing advice 
-- User1 getting aadvice via the user2 quiz questions 
+- Figure out how to link the user taking the quiz/giving the advice and user receiving advice 
+- User1 getting advice via the user2 quiz questions 
 - share info between users on local storage
 - link the quiz to the API responses 
 - group advice into different categories 
@@ -19,13 +19,13 @@ We wanted to create an app that allows a user to share information such as advic
 
 ## Description
 
-Welcome to Eternal External, an app that allows users to share comforting thoughts and crucial advice with their loved ones even when they are no longer here. User1 will be able to create a unique profile that allows them to store information they would like to share with their loved ones. We achieve this by presenting a quiz to the user, User2, that will put them in scenarioes their loved ones may experience day to day. The choices they make will be stored as advice and comforting thoughts for their loved ones, User1, to access when needed. User1 will also be albe to make a unique profile to link with User2. In User1's profile they will be able to access the advice stored from User2. Also they will be able to input a short summary of how they are feeling and the app will reveal the emotions within their text. They will then be able to click on that emotion to bring them to a breakdown of how much of each emotion is in their text via a bar graph. Eternal External's goal is to help ease the feelings of grief and sorrow associated with the loss of a loved one by continuing the connection you had and the comfort they brought you in life. 
+Welcome to Eternal External, an app that allows users to share comforting thoughts and crucial advice with their loved ones even when they are no longer here. User1 will be able to create a unique profile that allows them to store information they would like to share with their loved ones. We achieve this by presenting a quiz to the user, User2, that will put them in scenarios their loved ones may experience day to day. The choices they make will be stored as advice and comforting thoughts for their loved ones, User1, to access when needed. User1 will also be able to make a unique profile to link with User2. In User1's profile they will be able to access the advice stored from User2. Also they will be able to input a short summary of how they are feeling and the app will reveal the emotions within their text. They will then be able to click on that emotion to bring them to a breakdown of how much of each emotion is in their text via a bar graph. Eternal External's goal is to help ease the feelings of grief and sorrow associated with the loss of a loved one by continuing the connection you had and the comfort they brought you in life. 
 
 ## How to use 
 
 Home page:
 - Use links at top of screen to navigate to difference sections of the app.
-![Screenshot]() -- homescreen img
+![Screenshot]() -- home screen img
 
 Take the quiz:
 - Click in text area to type your name. Save your name with the submit button. This will be User2
@@ -39,7 +39,7 @@ Take the quiz:
 Get answers:
 - Click in text area to type your name. Save your name with the submit button.
 ![Screenshot]() -- show name typed
-- To retrieve the stored answers from the quiz, click on the icon under "Do you need advice? I may have the answer...". A drop down menu will appear and youll be able to choose a category to view the stored answers in. Stored answers will appear in a modal on screen.
+- To retrieve the stored answers from the quiz, click on the icon under "Do you need advice? I may have the answer...". A drop down menu will appear and you'll be able to choose a category to view the stored answers in. Stored answers will appear in a modal on screen.
 ![Screenshot]() -- Show dropdown menu
 ![Screenshot]() -- show modal
 - To have a string of text analyzed for emotions, click in the lower text area and type a short sentence of how you are feeling. Click the submit button below the text for the analyzer to begin, when finished 
