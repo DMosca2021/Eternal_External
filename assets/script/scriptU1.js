@@ -17,15 +17,6 @@ let chosenAdvice5 = document.querySelector("#advice-choice5");
 
 
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    var user1Input = document.querySelector('#userinput1').value;
-    console.log("user1Input " + user1Input)
-    localStorage.setItem("name",JSON.stringify(user1Input));
-    document.querySelector('#userinput1').value = "";
-});
-
-
 // Function to show the stored advice. We do not need the getStoredAdvice function, put that there for checking if the stored answers are correct. 
 
 //to show other choices instead of just userchoice try grabbing each modal individually and changing the text content that way. so we dont have to change the store function in script.js
@@ -112,10 +103,8 @@ function feelingFeedback(emotionalData) {
 				var emotionalDataReturn = localStorage.setItem("emotion-detect",JSON.stringify(emotionalData.emotions_detected));
 				console.log(emotionalDataReturn)
 				location.href = "graph.html"
-				
 
-
-				
+		
 				
 			}) 
 			//open page to chart 
@@ -141,14 +130,9 @@ form.addEventListener('submit', function(event) {
 	.then(function(data) {
 		console.log(data)
 		feelingFeedback(data)
-		
-
-
-	
+			
 	
 } )} )
-
-
 
 
 $(document).ready(function(){
@@ -163,3 +147,11 @@ $(document).ready(function(){
   });
 
 
+//stores username into local storage 
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    var user1Input = document.querySelector('#userinput1').value;
+    console.log("user1Input " + user1Input)
+    localStorage.setItem("name",JSON.stringify(user1Input));
+    document.querySelector('#userinput1').value = "";
+});
