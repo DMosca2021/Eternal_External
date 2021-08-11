@@ -33,6 +33,17 @@ h5 {
     background-color: #265d67;
 }
 
+.sidenav{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #265d67;
+}
+
+.sidenav li:hover {
+        background-color: white;
+        color: rgb(31, 27, 27);
+        font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .modal {
     border: mediumaquamarine 4px solid;
     border-radius: 10px;
