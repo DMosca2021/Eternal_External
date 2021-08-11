@@ -224,9 +224,6 @@ user2Btn.addEventListener('click', function(event) {
 
 $(document).ready(function(){
     $('.sidenav').sidenav();
-<<<<<<< HEAD
+
   });
-=======
-  });
-  // sidenav 
->>>>>>> 70a9ac8189eaf913678897f5c310633878a03faf
+

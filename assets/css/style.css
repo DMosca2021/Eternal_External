@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 body {
-    background-color:lightblue;
+    background-image: url("https://assets.digitalocean.com/django_gunicorn_nginx_2004/articles/new_learners/background-image.png");
     max-width: 100%;
     margin: auto;
 }
@@ -50,10 +50,6 @@ h5 {
     padding: 5%;
 }
 
-.modal {
-    background-image: url("images/cancel.png");
-                  
-}
 
 .dropdown-content{
     width: max-content !important;
