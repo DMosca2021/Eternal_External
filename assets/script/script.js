@@ -21,6 +21,7 @@ let checkBox3 = document.querySelector("#choice3");
 let checkBox4 = document.querySelector("#choice4");
 let startBtn = document.querySelector(".start-quiz");
 let submitBtn = document.querySelector("#submit-choice");
+let user2Btn = document.querySelector("#user2Btn")
 let questionIndex = 0;
 let choiceHist = JSON.parse(localStorage.getItem("userChoice")) || [];
 
@@ -213,10 +214,10 @@ startBtn.addEventListener("click", function(event){
 });
 
 
-form.addEventListener('submit', function(event) {
+user2Btn.addEventListener('click', function(event) {
     event.preventDefault();
-    var user1Input = document.querySelector('#userinput2').value;
-    console.log("user2Input " + user1Input)
-    localStorage.setItem("name",JSON.stringify(user1Input));
+    var user2Input = document.querySelector('#userinput2').value;
+    console.log("user2Input " + user2Input)
+    localStorage.setItem("name",JSON.stringify(user2Input));
     document.querySelector('#userinput2').value = "";
 });
