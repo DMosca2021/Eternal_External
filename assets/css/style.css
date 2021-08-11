@@ -2,9 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 body {
-    background-image: url("https://assets.digitalocean.com/django_gunicorn_nginx_2004/articles/new_learners/background-image.png");
-    max-width: 100%;
-    margin: auto;
+    background-image: url("./images/bg.png");
+ 
 }
 h1 {
     font-family: 'Montserrat', sans-serif;
