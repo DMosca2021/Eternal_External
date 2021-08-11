@@ -1,70 +1,51 @@
-# adj_project1
-## Beginning psuedo-code and ideas.
-- not sure if we want to keep all of this?
+# Eternal External v1.0
 
-//compare quiz answers of user 1 vs. user 2 
-//based on answers true/false certain out puts will show up 
-//store user information for later use
-//use moment to send random emails to user 1 
-// can we create a username and password to store the users information? 
-// figure out how to link the user taking the quiz and user giving the advice 
-// 2nd user getting answers share the quiz questions 
-//share info between users 
-// whatever question you ask 
-// link the quiz to the API responses 
+## Initial idea behind the app 
 
+We wanted to create an app that allows a user to share information such as advice about themselves with a second user. The second user will have access to the first users advice as well as other well being information. 
 
-// group advice into different categories 
-//put certain advice into one array chosen by dead person 
-//the living would get a random piece of advice depending on their checked box from the dead array 
+- Create a quiz to get advice from user2
+- Store quiz answers of user2 for user1 
+- Based on answers true/false certain outputs will store
+- Store user information for later use
+- Can we create a username and password to store the users information? 
+- Figure out how to link the user taking the quiz/giving the advice and user recieveing advice 
+- User1 getting aadvice via the user2 quiz questions 
+- share info between users on local storage
+- link the quiz to the API responses 
+- group advice into different categories 
+- put advice chosen from quiz into one array 
+- User1 gets advice based on category of advice question 
 
+## Description
 
+Welcome to Eternal External, an app that allows users to share comforting thoughts and crucial advice with their loved ones even when they are no longer here. User1 will be able to create a unique profile that allows them to store information they would like to share with their loved ones. We achieve this by presenting a quiz to the user, User2, that will put them in scenarioes their loved ones may experience day to day. The choices they make will be stored as advice and comforting thoughts for their loved ones, User1, to access when needed. User1 will also be albe to make a unique profile to link with User2. In User1's profile they will be able to access the advice stored from User2. Also they will be able to input a short summary of how they are feeling and the app will reveal the emotions within their text. They will then be able to click on that emotion to bring them to a breakdown of how much of each emotion is in their text via a bar graph. Eternal External's goal is to help ease the feelings of grief and sorrow associated with the loss of a loved one by continuing the connection you had and the comfort they brought you in life. 
 
-Clearly identify what you need to get to MVP by the end of class tomorrow
-What MVP is
-//2 users
-// user 2 dead choses best answers to pass on to their living relatives 
-// user 1 is given, advice, or emotional feedback based on what they want from the dead person 
+## How to use 
 
-//emotional feedback is given based on text input via  form 
-// advice is given based on user 1 choice 
-// "do you want advice about ... 1-5"
-// quitting something, job advice, relationship, confidence boost, what would you tell me if you were still here  (random)
-// Drop down menu 
-// whatever advice user 1 choses will be linked to the answer from user 2 
-// use APIs
+Home page:
+- Use links at top of screen to navigate to difference sections of the app.
+![Screenshot]() -- homescreen img
 
+Take the quiz:
+- Click in text area to type your name. Save your name with the submit button. This will be User2
+![Screenshot]() -- show name typed, quiz not displayed
+- Click the start quiz button to begin and display the quiz. Choose a suitable answer, only 1 choice allowed at a time but a choice must be made. 
+![Screenshot]() -- show quiz started, 1 box checked
+![Screenshot]() -- show alert choice must be made
+- Click save button to save your choice and move to the next question. At the end of the quiz you will be alerted that the quiz has ended and your choices are stored. 
+![Screenshot]() -- Show end of quiz alert
 
-//2 css for user 1 and 2 
-
-
-What tasks are being done when, by whom
-
-jill html 
-ale css 
-devin github
-javascript all 
-
-
-Make sure the team roles are clear to everyone including your TA
-Show your TA what you have deployed to github pages so far (can be a mostly empty skeleton)
-
-Should have the HTML main page mostly complete (not necessarily including the dynamic content yet, but that would be good to have)
-Remember to do your team assessment (standing meeting…) at the beginning and end of class.
-
-Show your TA all of the API requests you need working in Postman/Insomnia or with cUrl
-
-JavaScript implementation should be pseudo-coded and actual coding started
-Presentation started (skeleton -- 10% complete)
-This will also give you an opportunity to review the requirements for the project :slightly_smiling_face:
-
-## Description (idea behind the app, what its uses in the real world would be.)
-
-## How to use (Describe how to use all features of the app.)
-
-- Add some screen shots to show the different pages.
-
-![Screenshot]()
+Get answers:
+- Click in text area to type your name. Save your name with the submit button.
+![Screenshot]() -- show name typed
+- To retrieve the stored answers from the quiz, click on the icon under "Do you need advice? I may have the answer...". A drop down menu will appear and youll be able to choose a category to view the stored answers in. Stored answers will appear in a modal on screen.
+![Screenshot]() -- Show dropdown menu
+![Screenshot]() -- show modal
+- To have a string of text analyzed for emotions, click in the lower text area and type a short sentence of how you are feeling. Click the submit button below the text for the analyzer to begin, when finished 
+![Screenshot]() -- show typed text with emotion icons underneath.
+- Click on the displayed emotion icon to access the bar graph breakdown of your emotional response score.
+![Screenshot]() -- show graph
 
 ## How to access
 In order to access Eternal External. Follow the provided links to either the deployed application or the application repo on Github.
@@ -72,18 +53,30 @@ In order to access Eternal External. Follow the provided links to either the dep
 - [Deployed Link](https://dmosca2021.github.io/adj_project1/)
 - [Repo Link](https://github.com/DMosca2021/adj_project1)
 
+## Future developement
+
+We are constantly evolving to fit your needs and provide a better product. In the future we hope to offer some of the following features with more to come.
+
+- Create ability for unique user profiles.
+- User2 response to User1 emotional feedback.
+- Create a custom API to create custom tailored responses.
+- Add more advice categories.
+- Keep track of mental wellbeing day to day
+- Add favicon to tab.
+
+## Developers
+
+- Alejandra Feuereisen [Github Profile](https://github.com/afeuerei14)
+    - CSS and API manager, JavaScript for emotion graph
+- Devin Mosca [Github Profile](https://github.com/DMosca2021)
+    - Github manager, JavaScript for advice quiz and localstorage of advice
+- Jillian FitzMaurice [Github Profile](https://github.com/jilliankayworks)
+    - Team Leader, HTML, JavaScript for forms, emotional response, quality control
+
 ## Source links 
+
 - [Advice Slip API](https://api.adviceslip.com/#endpoint-search)
 - [Rapidapi Homepage](https://rapidapi.com/)
 - [Materialize CSS Framework](https://materializecss.com/)
 - [Twinword Sentiment Analyis API](https://www.twinword.com/)
 - [Interpreting Score of Sentiment Analysis](https://www.twinword.com/blog/interpreting-the-score-and-ratio-of-sentiment/)
-
-
-//store advice 
-//return advice based on drop down selection
-
-//figure out the return statement on graph page
-
-//graph needs to pull response from local storage 
-//format css
