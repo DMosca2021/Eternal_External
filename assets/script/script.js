@@ -79,6 +79,8 @@ function renderQuiz() {
             function renderQuestions() {
                 let currentQuestion = availableQuestions[questionIndex];
                 console.log("<---Shows current question--->");
+                //hits last question 
+                //need to check if it's the last question so renderQues doesn't run again 
                 console.log(currentQuestion.question);
 
                 shownQuestion.innerHTML = currentQuestion.question;
@@ -189,16 +191,17 @@ function storeChoice() {
     } else if (checkBox2.checked == true) {
         console.log(userChoice2.innerHTML); 
         choiceHist.push(userChoice2.innerHTML);
-        localStorage.setItem("userChoice2", JSON.stringify(choiceHist));
+        localStorage.setItem("userChoice", JSON.stringify(choiceHist));
     } else if (checkBox3.checked == true) {
         console.log(userChoice3.innerHTML);
         choiceHist.push(userChoice3.innerHTML);
-        localStorage.setItem("userChoice3", JSON.stringify(choiceHist));
+        localStorage.setItem("userChoice", JSON.stringify(choiceHist));
     } else if (checkBox4.checked == true) {
         console.log(userChoice4.innerHTML);
         choiceHist.push(userChoice4.innerHTML);
-        localStorage.setItem("userChoice4", JSON.stringify(choiceHist));
+        localStorage.setItem("userChoice", JSON.stringify(choiceHist));
     };
+    //removed number from user choice 
     console.log(choiceHist);
     console.log("<---End of storeChoice Function--->");
 };
