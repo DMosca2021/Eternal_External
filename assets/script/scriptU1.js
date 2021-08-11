@@ -1,11 +1,12 @@
 
 const user1Input = document.querySelector("#userinput1");
-const numberBg = document.getElementById("#main")
+const submitBtnU1 = document.getElementById("submitBtnU1");
+const numberBg = document.getElementById("#main");
 const feelingInputForm = document.getElementById("feelingInput");
-const feelingBtn = document.querySelector("#feelingBtn")
+const feelingBtn = document.querySelector("#feelingBtn");
 var emotionsDetected = ""
-const modal1 = document.getElementById("modal1")
-const advice1 = document.getElementById("advice1")
+const modal1 = document.getElementById("modal1");
+const advice1 = document.getElementById("advice1");
 var getUserChoice = JSON.parse(localStorage.getItem("userChoice"))|| [];
 
 // Making modal variables to get advice from local storage. 
@@ -96,8 +97,8 @@ function feelingFeedback(emotionalData) {
 			feelingBtnDiv.append(feelingBtnEl)
 			feelingBtnEl.setAttribute("style", "background-color: teal; border-radius:5px; text-transform:uppercase;font-size:3vw;font-weight:bold;")
 
-			feelingBtnEl.addEventListener("click", function name() {
-
+			feelingBtnEl.addEventListener("click", function name(event) {
+				event.preventDefault();
 				
 				localStorage.setItem("emotion-scores",JSON.stringify(emotionalData.emotion_scores));
 				var emotionalDataReturn = localStorage.setItem("emotion-detect",JSON.stringify(emotionalData.emotions_detected));
@@ -123,8 +124,8 @@ function emotionScores(data) {
 	
 }
 
-form.addEventListener('submit', function(event) {
-	event.preventDefault();
+feelingBtn.addEventListener('click', function(event) {
+	event.preventDefault()
 	
 	getFeeling() 
 	.then(function(data) {
@@ -148,8 +149,8 @@ $(document).ready(function(){
 
 
 //stores username into local storage 
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
+submitBtnU1.addEventListener('click', function(event) {
+	event.preventDefault()
     var user1Input = document.querySelector('#userinput1').value;
     console.log("user1Input " + user1Input)
     localStorage.setItem("name",JSON.stringify(user1Input));
