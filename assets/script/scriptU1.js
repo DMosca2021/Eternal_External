@@ -19,8 +19,6 @@ let chosenAdvice5 = document.querySelector("#advice-choice5");
 
 
 // Function to show the stored advice. We do not need the getStoredAdvice function, put that there for checking if the stored answers are correct. 
-
-//to show other choices instead of just userchoice try grabbing each modal individually and changing the text content that way. so we dont have to change the store function in script.js
 console.log("<-----getStoredAdvice----->")
 function getStoredAdvice() {
 	console.log(getUserChoice);

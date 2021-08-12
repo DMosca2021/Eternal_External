@@ -7,8 +7,6 @@
     // Possibly add a next button instead of using the save button to change questions. 
     // Create a text input to display on graph page for user2 to "respond" to user1's input.
 
-
-
 let questionDisplay = document.querySelector(".question-display");
 let shownQuestion = document.querySelector(".question");
 let advice1 = document.querySelector("#choice-text1");
@@ -137,8 +135,6 @@ function nextQuestion() {
     console.log("<---End of nextQuestion Function--->");
 };
 
-// ****I think the isChecked function can be cleaned up a bit. Pretty sure I can set it up the same as the storeChoice function and use else if statements. As is the function works and will look into cleaning it up after the local storage issues are sorted out.****
-
 // Function to check if checkboxes are checked, disables non chosen boxes to prevent multiple choices. Alerts to choose a box if none chosen.
 function isChecked() {
     console.log("<-----Start of isChecked Function----->");
@@ -148,7 +144,10 @@ function isChecked() {
     console.log(checkBox4.checked);
     console.log("<--------->");
      if (checkBox1.checked == false && checkBox2.checked == false && checkBox3.checked == false && checkBox4.checked == false) {
-        alert("Choose an advice slip"); // <----- CHANGE TO A MODAL!!!!
+        // alert("Choose an advice slip"); // <----- CHANGE TO A MODAL!!!!
+        // $(document).ready(function(){
+        //     $('.modal').modal();
+        //   });
      } 
      if (checkBox1.checked == true) {
          checkBox2.disabled = true;
@@ -222,8 +221,8 @@ user2Btn.addEventListener('click', function(event) {
     document.querySelector('#userinput2').value = "";
 });
 
+
 $(document).ready(function(){
     $('.sidenav').sidenav();
 
   });
-
