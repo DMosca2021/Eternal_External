@@ -13,9 +13,9 @@ body {
 
 
 h1 {
+    opacity: 85%;
     font-family: 'Montserrat', sans-serif;
     color: whitesmoke;
-    border: rgb(0, 137, 139) solid 4px;
     border-radius: 10px;
     background-color: #85c9d3; 
     padding: 10px; 
@@ -44,7 +44,11 @@ h5 {
     background-color: #265d67;
 }
 
+
 .sidenav {
+        color: white;
+        opacity: 85%;
+    
     font-family: 'Montserrat', sans-serif;
     background-color: #265d67;
 }
