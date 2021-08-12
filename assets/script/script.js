@@ -221,6 +221,8 @@ user2Btn.addEventListener('click', function(event) {
     document.querySelector('#userinput2').value = "";
 });
 
-// $(document).ready(function(){
-//     $('.modal').modal();
-//   });
+
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+
+  });

@@ -154,3 +154,8 @@ submitBtnU1.addEventListener('click', function(event) {
     localStorage.setItem("name",JSON.stringify(user1Input));
     document.querySelector('#userinput1').value = "";
 });
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+  // sidenav
