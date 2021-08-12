@@ -4,10 +4,11 @@ const submitBtnU1 = document.getElementById("submitBtnU1");
 const numberBg = document.getElementById("#main");
 const feelingInputForm = document.getElementById("feelingInput");
 const feelingBtn = document.querySelector("#feelingBtn");
-var emotionsDetected = ""
+let emotionsDetected = ""
 const modal1 = document.getElementById("modal1");
 const advice1 = document.getElementById("advice1");
-var getUserChoice = JSON.parse(localStorage.getItem("userChoice"))|| [];
+let getUserChoice = JSON.parse(localStorage.getItem("userChoice"))|| [];
+let userNameDisplay =document.querySelector("#user-name-display");
 
 // Making modal variables to get advice from local storage. 
 let chosenAdvice1 = document.querySelector("#advice-choice1");
@@ -18,8 +19,7 @@ let chosenAdvice5 = document.querySelector("#advice-choice5");
 
 
 
-// Function to show the stored advice. We do not need the getStoredAdvice function, put that there for checking if the stored answers are correct. 
-console.log("<-----getStoredAdvice----->")
+// Function to show the stored advice. We do not need the getStoredAdvice function, put that there for checking if the stored answers are correct.
 function getStoredAdvice() {
 	console.log(getUserChoice);
 	console.log(getUserChoice[0]);
@@ -38,7 +38,6 @@ function getStoredAdvice() {
 	showAdvice();
 }
 getStoredAdvice();
-console.log("<---End--->")
 
 
 
@@ -49,7 +48,7 @@ console.log(feelingInputForm.value)
 	}
 let newFeelingInput = feelingInput.replaceAll(" ", "%20");
 console.log(newFeelingInput);
-var feelingAPI = "https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/?text=" + newFeelingInput
+let feelingAPI = "https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/?text=" + newFeelingInput
 return fetch(feelingAPI, {
 
 	"method": "GET",
@@ -85,7 +84,7 @@ function feelingFeedback(emotionalData) {
 
 		
 		emotionalData.emotions_detected.forEach(element => {
-			var feelingBtnDiv = document.getElementById("emotional-response-btn");
+			let feelingBtnDiv = document.getElementById("emotional-response-btn");
 			let feelingBtnEl = document.createElement("button");
 			console.log(element);
 			console.log(emotionalData.emotions_detected)
@@ -99,7 +98,7 @@ function feelingFeedback(emotionalData) {
 				event.preventDefault();
 				
 				localStorage.setItem("emotion-scores",JSON.stringify(emotionalData.emotion_scores));
-				var emotionalDataReturn = localStorage.setItem("emotion-detect",JSON.stringify(emotionalData.emotions_detected));
+				let emotionalDataReturn = localStorage.setItem("emotion-detect",JSON.stringify(emotionalData.emotions_detected));
 				console.log(emotionalDataReturn)
 				location.href = "graph.html"
 
@@ -130,7 +129,6 @@ feelingBtn.addEventListener('click', function(event) {
 		console.log(data)
 		feelingFeedback(data)
 			
-	
 } )} )
 
 
@@ -149,10 +147,10 @@ $(document).ready(function(){
 //stores username into local storage 
 submitBtnU1.addEventListener('click', function(event) {
 	event.preventDefault()
-    var user1Input = document.querySelector('#userinput1').value;
-    console.log("user1Input " + user1Input)
+    let user1Input = document.querySelector('#userinput1').value;
     localStorage.setItem("name",JSON.stringify(user1Input));
     document.querySelector('#userinput1').value = "";
+	userNameDisplay.innerHTML = user1Input
 });
 
   $(document).ready(function(){
