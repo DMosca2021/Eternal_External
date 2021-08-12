@@ -25,27 +25,24 @@ Welcome to Eternal External, an app that allows users to share comforting though
 
 Home page:
 - Use links at top of screen to navigate to difference sections of the app.
-![Screenshot]() -- home screen img
+![Screenshot](./assets/css/images/EtEx_homepage.png) 
 
 Take the quiz:
 - Click in text area to type your name. Save your name with the submit button. This will be User2
-![Screenshot]() -- show name typed, quiz not displayed
+![Screenshot](./assets/css/images/EtEx_user2name.png) 
 - Click the start quiz button to begin and display the quiz. Choose a suitable answer, only 1 choice allowed at a time but a choice must be made. 
-![Screenshot]() -- show quiz started, 1 box checked
-![Screenshot]() -- show alert choice must be made
+![Screenshot](./assets/css/images/EtEx_quiz.png) 
 - Click save button to save your choice and move to the next question. At the end of the quiz you will be alerted that the quiz has ended and your choices are stored. 
-![Screenshot]() -- Show end of quiz alert
-
 Get answers:
 - Click in text area to type your name. Save your name with the submit button.
-![Screenshot]() -- show name typed
+![Screenshot](./assets/css/images/EtEx_user1name.png) -- show name typed
 - To retrieve the stored answers from the quiz, click on the icon under "Do you need advice? I may have the answer...". A drop down menu will appear and you'll be able to choose a category to view the stored answers in. Stored answers will appear in a modal on screen.
-![Screenshot]() -- Show dropdown menu
-![Screenshot]() -- show modal
+![Screenshot](./assets/css/images/EtEx_advicedropdown.png) -- Show dropdown menu
+![Screenshot](./assets/css/images/EtEx_modal.png) -- show modal
 - To have a string of text analyzed for emotions, click in the lower text area and type a short sentence of how you are feeling. Click the submit button below the text for the analyzer to begin, when finished 
-![Screenshot]() -- show typed text with emotion icons underneath.
+![Screenshot](./assets/css/images/EtEx_textentryemotion.png) -- show typed text with emotion icons underneath.
 - Click on the displayed emotion icon to access the bar graph breakdown of your emotional response score.
-![Screenshot]() -- show graph
+![Screenshot](./assets/css/images/EtEx_graph.png) -- show graph
 
 ## How to access
 In order to access Eternal External. Follow the provided links to either the deployed application or the application repo on Github.
@@ -57,6 +54,7 @@ In order to access Eternal External. Follow the provided links to either the dep
 
 We are constantly evolving to fit your needs and provide a better product. In the future we hope to offer some of the following features with more to come.
 
+- User name displays on page after submitting.
 - Create ability for unique user profiles.
 - User2 response to User1 emotional feedback.
 - Create a custom API to create custom tailored responses.

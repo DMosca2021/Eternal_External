@@ -75,6 +75,7 @@ h5 {
 
 #choice-text1, #choice-text2, #choice-text3, #choice-text4 {
     color: white;
+    font-weight: bold;
 }
 
 
@@ -96,4 +97,22 @@ h5 {
 .page-footer {
     background-color: #85c9d3; 
     width: 100%;
+}
+
+#userinput1 {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#userinput2 {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#feelingInput {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
 }
