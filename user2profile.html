@@ -13,30 +13,9 @@
 </head>
 <body>
 
-
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
-  </ul>
-         
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+      <a href="#" class="brand-logo">Eternal External</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="user2profile.html">take the quiz</a></li>
@@ -58,11 +37,16 @@
 
   <header>
 
+
+<div class="container transparent z-depth-5">
+      <div class="padding-div">
+        <div class="center-align">
+        <img src="./assets/css/images/wavehand2.png" alt="EE logo">
+      </div>
 <div class="container">
-  <img src="./images/wavehand2.png" alt="EE logo">
     <h1>User 2 The Dead</h1>
     <h5>Let's get to know you better</h5>
-    <label for="fname"><h5>Name:</h5></label><br>
+    <label class="fname" for="fname"><h5>Name:</h5></label><br>
     <input type="text" id="userinput2" name="userinput2" value=""><br>
     <button id="user2Btn" class="waves-effect waves-light btn" type="submit"><i class="material-icons right"></i>submit</button>              
     <button class="start-quiz waves-effect waves-light btn" type="submit"><i class="material-icons right">play_circle_outline</i>start quiz</button>              
@@ -88,7 +72,32 @@
           </p>
       </form> 
 </div>
-<img src="./images/skullrising.png" alt="">
+</div>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Eternal External</h5>
+        <p class="grey-text text-lighten-4">Life continues on...</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">contact</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">about</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Copyright</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2021 Copyright Text
+    <a class="grey-text text-lighten-4 right" href="#!">Resources</a>
+    </div>
+  </div>
+</footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./assets/script/script.js"></script>
 </body>
