@@ -12,7 +12,7 @@ console.log(getUserName);
 var username = document.createElement('h4')
 var userNameStored = username.textContent = getUserName
 console.log(userNameStored);
-userNameSpan.append(userNameStored +", ")
+userNameSpan.append(userNameStored + ", ")
 
 
 
@@ -35,6 +35,7 @@ function user2response() {
   console.log(savedEmotions);
   emotionText.textContent = tempResponseObject[getEmotion[0]]
   //always 0 will pull the first emotional response in the index
+  //further dev - id buttons and tie them to the array of emotions 
 
     }
         
