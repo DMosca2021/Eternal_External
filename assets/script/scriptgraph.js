@@ -26,7 +26,7 @@ function user2response() {
    let tempResponseObject = {
        joy: "It's sure nice over here on the other side too!",
        sadness: "the sun will come out tomorrow",
-       fear: "there are two wolves inside of all of us... one feeds of fear, the other feeds of hope. Which one will you let go hungry?",
+       fear: "there are two wolves inside of all of us... one feeds off of fear, the other feeds off of hope. Which one will you give a treat?",
        disgust: "Oh no that does not sound good at all",
        surprise: "Wow! Surprises can be good or bad... I hope this was a good one!",
        anger: "try to do something that makes you happy instead"

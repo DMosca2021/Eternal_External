@@ -76,5 +76,5 @@ We are constantly evolving to fit your needs and provide a better product. In th
 - [Advice Slip API](https://api.adviceslip.com/#endpoint-search)
 - [Rapidapi Homepage](https://rapidapi.com/)
 - [Materialize CSS Framework](https://materializecss.com/)
-- [Twinword Sentiment Analyis API](https://www.twinword.com/)
+- [Twinword Sentiment Analysis API](https://www.twinword.com/)
 - [Interpreting Score of Sentiment Analysis](https://www.twinword.com/blog/interpreting-the-score-and-ratio-of-sentiment/)
