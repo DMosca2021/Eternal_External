@@ -83,7 +83,7 @@ return data
 function feelingFeedback(emotionalData) {
 		
 
-		
+		// creates a button for the emotional data from the API 
 		emotionalData.emotions_detected.forEach(element => {
 			var feelingBtnDiv = document.getElementById("emotional-response-btn");
 			let feelingBtnEl = document.createElement("button");
@@ -122,6 +122,7 @@ function emotionScores(data) {
 	
 }
 
+//adding another .then to pull data into this function 
 feelingBtn.addEventListener('click', function(event) {
 	event.preventDefault()
 	
@@ -133,7 +134,7 @@ feelingBtn.addEventListener('click', function(event) {
 	
 } )} )
 
-
+//materialize modal 
 $(document).ready(function(){
 	$('.modal').modal();
 	$('.dropdown-trigger').dropdown();

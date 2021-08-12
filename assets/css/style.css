@@ -38,6 +38,7 @@ h5 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     color: white;
+    padding: 2%;
 }
 .nav-wrapper {
     font-family: 'Montserrat', sans-serif;
@@ -65,9 +66,11 @@ h5 {
     padding: 5%;
 }
 
+
 #myChart {
     width: 100%;
     height: auto;
+    padding: 4%;
 }
 
 #choice-text1, #choice-text2, #choice-text3, #choice-text4 {
