@@ -17,9 +17,12 @@ let checkBox1 = document.querySelector("#choice1");
 let checkBox2 = document.querySelector("#choice2");
 let checkBox3 = document.querySelector("#choice3");
 let checkBox4 = document.querySelector("#choice4");
+let modal1 = document.querySelector("#modal1")
+let modal2 = document.querySelector("#modal2")
 let startBtn = document.querySelector(".start-quiz");
 let submitBtn = document.querySelector("#submit-choice");
-let user2Btn = document.querySelector("#user2Btn")
+let user2Btn = document.querySelector("#user2Btn");
+let user2NameDisplay =document.querySelector("#user2-name-display");
 let questionIndex = 0;
 let choiceHist = JSON.parse(localStorage.getItem("userChoice")) || [];
 
@@ -35,7 +38,7 @@ function startQuiz() {
 // Ends quiz, hides questions, sends an alert(modal), disables the submit button/enables start quiz button
 function endQuiz(){
     questionDisplay.setAttribute("style", "visibility: hidden");
-    alert("Quiz complete!"); // <----- CHANGE TO A MODAL!!!!
+    // alert("Quiz complete!"); // <----- CHANGE TO A MODAL!!!!
     startBtn.disabled = false;
     submitBtn.disabled = true;
 }
@@ -65,42 +68,25 @@ function renderQuiz() {
                 choices: [data.slips[112].advice, data.slips[114].advice, data.slips[128].advice, data.slips[59].advice],
                 }
             ]
+            let availableQuestions = [...questionsArray];
 
-            let availableQuestions = [...questionsArray] // Not exactly sure what the [...array] does. Used it on quiz homework and it works here. 
-
-            console.log("<---Initial Question index followed by all of the available questions put into an array--->");
-
-            console.log(questionIndex);
-            console.log(availableQuestions);
-
-            console.log("<-----Start of renderQuestions Function------>");
             // Shows the current question and its associated answers
             function renderQuestions() {
                 let currentQuestion = availableQuestions[questionIndex];
-                console.log("<---Shows current question--->");
-                //hits last question 
-                //need to check if it's the last question so renderQues doesn't run again 
-                console.log(currentQuestion.question);
-
+                if (questionIndex >= availableQuestions.length - 1) {
+                    return;
+                }
                 shownQuestion.innerHTML = currentQuestion.question;
-
                 currentQuestion.choices.forEach(element => {
                     let answerIndex = currentQuestion.choices;
-                    console.log("<---Shows each individual answer--->")
-                    console.log(answerIndex[0]);
-                    console.log(answerIndex[1]);
-                    console.log(answerIndex[2]);
-                    console.log(answerIndex[3]);
-
                     advice1.innerHTML = answerIndex[0]
                     advice2.innerHTML = answerIndex[1]
                     advice3.innerHTML = answerIndex[2]
                     advice4.innerHTML = answerIndex[3]
-
                 });
             }
             renderQuestions();
-            console.log("<---End of renderQuestions Function--->");
+        
             // Submit button to save user choices to local storage, changes question and renders next question.
             submitBtn.addEventListener("click", function(event){
                 event.preventDefault();
@@ -115,14 +101,11 @@ function renderQuiz() {
 };
 // Function to display the next question, once end of question array is reached quiz is ended.
 function nextQuestion() {
-    console.log("<-----Start of nextQuestion Function----->")
     if (checkBox1.checked == true || checkBox2.checked == true || checkBox3.checked == true || checkBox4.checked == true) {
         questionIndex++;
         if (questionIndex >= 5){
             endQuiz();
         }
-        console.log("<---Shows increase in question index, displays next question and answers--->");
-        console.log(questionIndex);
         checkBox1.checked = false;
         checkBox2.checked = false;
         checkBox3.checked = false;
@@ -132,17 +115,10 @@ function nextQuestion() {
         checkBox3.disabled = false;
         checkBox4.disabled = false;
     }
-    console.log("<---End of nextQuestion Function--->");
 };
 
 // Function to check if checkboxes are checked, disables non chosen boxes to prevent multiple choices. Alerts to choose a box if none chosen.
 function isChecked() {
-    console.log("<-----Start of isChecked Function----->");
-    console.log(checkBox1.checked);
-    console.log(checkBox2.checked);
-    console.log(checkBox3.checked);
-    console.log(checkBox4.checked);
-    console.log("<--------->");
      if (checkBox1.checked == false && checkBox2.checked == false && checkBox3.checked == false && checkBox4.checked == false) {
         // alert("Choose an advice slip"); // <----- CHANGE TO A MODAL!!!!
         // $(document).ready(function(){
@@ -175,35 +151,26 @@ function isChecked() {
         checkBox2.disabled = true;
         checkBox3.disabled = true;
     }
-    console.log("<---End of isChecked Function--->");
 };
 // Function to store chosen check box's advice slip. All are added to the choiceHist array for future use. 
 function storeChoice() {
-    console.log("<-----Start of storeChoice Function----->");
     let userChoice = advice1;
     let userChoice2 = advice2;
     let userChoice3 = advice3;
     let userChoice4 = advice4;
     if (checkBox1.checked == true) {
-        console.log(userChoice.innerHTML); //Shows the answer as a string
-        choiceHist.push(userChoice.innerHTML); // Adds to the choiceHist array 
+        choiceHist.push(userChoice.innerHTML);  
         localStorage.setItem("userChoice", JSON.stringify(choiceHist));
-    } else if (checkBox2.checked == true) {
-        console.log(userChoice2.innerHTML); 
+    } else if (checkBox2.checked == true) { 
         choiceHist.push(userChoice2.innerHTML);
         localStorage.setItem("userChoice", JSON.stringify(choiceHist));
     } else if (checkBox3.checked == true) {
-        console.log(userChoice3.innerHTML);
         choiceHist.push(userChoice3.innerHTML);
         localStorage.setItem("userChoice", JSON.stringify(choiceHist));
     } else if (checkBox4.checked == true) {
-        console.log(userChoice4.innerHTML);
         choiceHist.push(userChoice4.innerHTML);
         localStorage.setItem("userChoice", JSON.stringify(choiceHist));
     };
-    //removed number from user choice 
-    console.log(choiceHist);
-    console.log("<---End of storeChoice Function--->");
 };
 
 // Start button
@@ -212,17 +179,16 @@ startBtn.addEventListener("click", function(event){
     startQuiz();
 });
 
-
+// Submit name button, displays input 
 user2Btn.addEventListener('click', function(event) {
     event.preventDefault();
     var user2Input = document.querySelector('#userinput2').value;
-    console.log("user2Input " + user2Input)
     localStorage.setItem("name",JSON.stringify(user2Input));
     document.querySelector('#userinput2').value = "";
+    user2NameDisplay.innerHTML = user2Input
 });
 
-
+// Hamburger menu
 $(document).ready(function(){
     $('.sidenav').sidenav();
-
-  });
+});

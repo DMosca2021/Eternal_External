@@ -57,6 +57,7 @@ In order to access Eternal External. Follow the provided links to either the dep
 
 We are constantly evolving to fit your needs and provide a better product. In the future we hope to offer some of the following features with more to come.
 
+- User name displays on page after submitting.
 - Create ability for unique user profiles.
 - User2 response to User1 emotional feedback.
 - Create a custom API to create custom tailored responses.
