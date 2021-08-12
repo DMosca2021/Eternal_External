@@ -11,10 +11,6 @@ body {
  
 }
 
-.padding-div {
-    padding: 2%;
-
-}
 
 h1 {
     font-family: 'Montserrat', sans-serif;
@@ -63,6 +59,15 @@ h5 {
     border: mediumaquamarine 4px solid;
     border-radius: 10px;
     padding: 5%;
+}
+
+#myChart {
+    width: 100%;
+    height: auto;
+}
+
+#choice-text1, #choice-text2, #choice-text3, #choice-text4 {
+    color: white;
 }
 
 
