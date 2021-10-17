@@ -47,7 +47,7 @@ Get answers:
 ## How to access
 In order to access Eternal External. Follow the provided links to either the deployed application or the application repo on Github.
 
-- [Deployed Link](https://dmosca2021.github.io/adj_project1/)
+- [Deployed Link](https://dmosca2021.github.io/Eternal_External/)
 - [Repo Link](https://github.com/DMosca2021/adj_project1)
 
 ## Future developement
